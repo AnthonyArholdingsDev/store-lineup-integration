@@ -9,20 +9,22 @@ import {
   Checkbox,
   Button,
   useExtensionCapability,
-  useBuyerJourneyIntercept,
+  useTotalAmount,
+  Spinner,
 } from "@shopify/checkout-ui-extensions-react";
 
-render("Checkout::Contact::RenderAfter", () => <App />);
+render("Checkout::Reductions::RenderAfter", () => <App />);
 
 function App() {
   const [useLineupCard, setUseLineupCard] = useState(false);
   const [lineupCardNumber, setLineupCardNumber] = useState("");
   const [validationError, setValidationError] = useState("");
   const [saldoDisponible, setSaldoDisponible] = useState(null);
-  const [descuentoSeleccionado, setDescuentoSeleccionado] = useState(null);
   const [cardAdded, setCardAdded] = useState(false);
+  const [isLoading, setIsLoading] = useState(false); // New state for loader
 
   const canBlockProgress = useExtensionCapability("block_progress");
+  const totalAmount = useTotalAmount();
 
   useEffect(() => {
     setLineupCardNumber("");
@@ -37,22 +39,32 @@ function App() {
 
   function handleButtonClick() {
     if (useLineupCard) {
-      // fetch(`https://tu-api.com/validar?numero=${lineupCardNumber}`)
-      //   .then((response) => response.json())
-      //   .then((data) => {
-
-      //   });
-      const data = {
-        esValido: true,
-        saldo: 100,
-      };
-      if (data.esValido) {
-        setSaldoDisponible(data.saldo);
-        setCardAdded(true);
-        clearValidationErrors();
-      } else {
-        setValidationError("El número de la tarjeta lineup es inválido");
+      if (lineupCardNumber.trim() === "") {
+        setValidationError("Ingresa el número de tarjeta");
+        return;
       }
+
+      setIsLoading(true); // Start loader
+
+      // Simulating fetch delay
+      setTimeout(() => {
+        const data = {
+          esValido: true,
+          saldo: 2000,
+        };
+
+        setIsLoading(false); // Stop loader
+
+        if (data.esValido) {
+          setSaldoDisponible(data.saldo);
+          setCardAdded(true);
+          clearValidationErrors();
+        } else {
+          setValidationError(
+            "El número de la tarjeta Lineup Rewards es inválido"
+          );
+        }
+      }, 2000); // Replace this with your actual fetch call
     }
   }
 
@@ -65,8 +77,14 @@ function App() {
   return (
     <BlockStack>
       <View padding="base">
-        <Checkbox checked={useLineupCard} onChange={setUseLineupCard}>
-          {useLineupCard ? "Eliminar tarjeta lineup" : "Usar tarjeta lineup"}
+        <Checkbox
+          checked={useLineupCard}
+          onChange={setUseLineupCard}
+          disabled={isLoading ? true : false}
+        >
+          {useLineupCard
+            ? "Eliminar tarjeta Lineup Rewards"
+            : "Usar tarjeta Lineup Rewards para obtener descuento"}
         </Checkbox>
       </View>
       {useLineupCard && (
@@ -74,26 +92,33 @@ function App() {
           {!cardAdded && (
             <BlockStack spacing="base">
               <TextField
-                label="Número de la tarjeta lineup"
+                label="Número de tarjeta Lineup Rewards"
                 value={lineupCardNumber}
                 onChange={setLineupCardNumber}
                 onInput={clearValidationErrors}
                 required={canBlockProgress}
+                disabled={isLoading ? true : false}
                 error={validationError}
               />
-              <Button onPress={handleButtonClick}>
+              <Button
+                disabled={isLoading ? true : false}
+                onPress={handleButtonClick}
+              >
                 Agregar tarjeta lineup para esta compra
               </Button>
+              {isLoading && <Spinner />} {/* Loader */}
             </BlockStack>
           )}
           {saldoDisponible !== null && cardAdded && (
-            <Banner status="info" title="Tarjeta Lineup Agregada">
+            <Banner status="success" title="Tarjeta Lineup Rewards Agregada">
               <BlockStack>
                 <Text>Número de tarjeta: {lineupCardNumber}</Text>
                 <Text>Saldo disponible en la tarjeta: ${saldoDisponible}</Text>
                 <Text appearance="info">
-                  El 100% del valor de la tarjeta se ha aplicado a la compra
-                  actual.
+                  Valor de la tarjeta a utilizar en la compra: ${" "}
+                  {saldoDisponible >= totalAmount.amount
+                    ? totalAmount.amount
+                    : saldoDisponible}
                 </Text>
                 <Button kind="secondary" onPress={handleRemoveCard}>
                   Eliminar Tarjeta
@@ -106,3 +131,5 @@ function App() {
     </BlockStack>
   );
 }
+
+export default App;

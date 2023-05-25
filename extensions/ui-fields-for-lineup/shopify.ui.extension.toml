@@ -2,12 +2,11 @@ type = "checkout_ui_extension"
 name = "ui-fields-for-lineup"
 
 extension_points = [
-  'Checkout::Contact::RenderAfter',
-  'Checkout::ShippingRate::RenderAfter',
-  'Checkout::PostPurchase::Render',
-  'Checkout::PostPurchase::RenderAfter',	
-  'Checkout::Dynamic::Render'
+  'Checkout::Reductions::RenderAfter'
 ]
+
+[capabilities]
+block_progress = true
 
 # [[metafields]]
 # namespace = "my-namespace"

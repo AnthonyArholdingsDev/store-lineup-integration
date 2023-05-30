@@ -2,7 +2,7 @@ type = "checkout_ui_extension"
 name = "ui-fields-for-lineup"
 
 extension_points = [
-  'Checkout::Reductions::RenderAfter'
+  'Checkout::Dynamic::Render'
 ]
 
 [capabilities]

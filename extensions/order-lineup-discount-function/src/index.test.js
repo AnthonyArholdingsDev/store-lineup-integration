@@ -1,13 +1,13 @@
 import { describe, it, expect } from 'vitest';
-import productDiscounts from './index';
+import orderDiscounts from './index';
 
 /**
  * @typedef {import("../generated/api").FunctionResult} FunctionResult
  */
 
-describe('product discounts function', () => {
+describe('order discounts function', () => {
   it('returns no discounts without configuration', () => {
-    const result = productDiscounts({
+    const result = orderDiscounts({
       discountNode: {
         metafield: null
       }

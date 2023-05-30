@@ -10,27 +10,39 @@ import {
   Button,
   useExtensionCapability,
   useTotalAmount,
+  useApplyAttributeChange,
+  useAttributes,
   Spinner,
 } from "@shopify/checkout-ui-extensions-react";
 
-render("Checkout::Reductions::RenderAfter", () => <App />);
+render("Checkout::Dynamic::Render", () => <App />);
 
 function App() {
   const [useLineupCard, setUseLineupCard] = useState(false);
   const [lineupCardNumber, setLineupCardNumber] = useState("");
   const [validationError, setValidationError] = useState("");
   const [saldoDisponible, setSaldoDisponible] = useState(null);
+  const [saldoGastar, setSaldoGastar] = useState(null);
   const [cardAdded, setCardAdded] = useState(false);
   const [isLoading, setIsLoading] = useState(false); // New state for loader
 
   const canBlockProgress = useExtensionCapability("block_progress");
+  const applyAttributeChange = useApplyAttributeChange();
+  const attributes = useAttributes();
   const totalAmount = useTotalAmount();
 
-  useEffect(() => {
+  console.log("attributes", attributes);
+
+  useEffect(async () => {
     setLineupCardNumber("");
     setValidationError("");
     setSaldoDisponible(null);
     setCardAdded(false);
+    await applyAttributeChange({
+      key: "lineupCardValue",
+      type: "updateAttribute",
+      value: "null",
+    });
   }, [useLineupCard]);
 
   function clearValidationErrors() {
@@ -39,15 +51,27 @@ function App() {
 
   function handleButtonClick() {
     if (useLineupCard) {
+      const regex = /^[0-9]+$/;
+
       if (lineupCardNumber.trim() === "") {
         setValidationError("Ingresa el número de tarjeta");
+        return;
+      }
+
+      if (lineupCardNumber.length < 9) {
+        setValidationError("La tarjeta debe tener más de 9 dígitos");
+        return;
+      }
+
+      if (!regex.test(lineupCardNumber)) {
+        setValidationError("La tarjeta solo debe contener números");
         return;
       }
 
       setIsLoading(true); // Start loader
 
       // Simulating fetch delay
-      setTimeout(() => {
+      setTimeout(async () => {
         const data = {
           esValido: true,
           saldo: 2000,
@@ -56,9 +80,20 @@ function App() {
         setIsLoading(false); // Stop loader
 
         if (data.esValido) {
+          const saldo =
+            data.saldo >= totalAmount.amount
+              ? totalAmount.amount.toString()
+              : data.saldo.toString();
           setSaldoDisponible(data.saldo);
+          setSaldoGastar(saldo);
           setCardAdded(true);
           clearValidationErrors();
+          //Agrega un el numero y valor de la tarjeta a los atributos
+          const change = await applyAttributeChange({
+            key: "lineupCardValue",
+            type: "updateAttribute",
+            value: saldo,
+          });
         } else {
           setValidationError(
             "El número de la tarjeta Lineup Rewards es inválido"
@@ -68,10 +103,15 @@ function App() {
     }
   }
 
-  function handleRemoveCard() {
+  async function handleRemoveCard() {
     setCardAdded(false);
     setSaldoDisponible(null);
     setLineupCardNumber("");
+    await applyAttributeChange({
+      key: "lineupCardValue",
+      type: "updateAttribute",
+      value: "null",
+    });
   }
 
   return (
@@ -84,7 +124,7 @@ function App() {
         >
           {useLineupCard
             ? "Eliminar tarjeta Lineup Rewards"
-            : "Usar tarjeta Lineup Rewards para obtener descuento"}
+            : "Usar tarjeta Lineup Rewards para obtener un descuento en toda la compra"}
         </Checkbox>
       </View>
       {useLineupCard && (
@@ -115,10 +155,7 @@ function App() {
                 <Text>Número de tarjeta: {lineupCardNumber}</Text>
                 <Text>Saldo disponible en la tarjeta: ${saldoDisponible}</Text>
                 <Text appearance="info">
-                  Valor de la tarjeta a utilizar en la compra: ${" "}
-                  {saldoDisponible >= totalAmount.amount
-                    ? totalAmount.amount
-                    : saldoDisponible}
+                  Valor de la tarjeta a utilizar en la compra: $ {saldoGastar}
                 </Text>
                 <Button kind="secondary" onPress={handleRemoveCard}>
                   Eliminar Tarjeta

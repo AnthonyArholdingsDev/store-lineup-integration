@@ -1,0 +1,7 @@
+query Input {
+  cart {
+    attribute(key: "lineupCardValue") {
+      value
+    }
+  }
+}

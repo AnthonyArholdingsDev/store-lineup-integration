@@ -12,6 +12,7 @@ import {
   useTotalAmount,
   useApplyAttributeChange,
   useAttributes,
+  useCartLines,
   Spinner,
 } from "@shopify/checkout-ui-extensions-react";
 
@@ -29,9 +30,17 @@ function App() {
   const canBlockProgress = useExtensionCapability("block_progress");
   const applyAttributeChange = useApplyAttributeChange();
   const attributes = useAttributes();
-  const totalAmount = useTotalAmount();
+  // const totalAmount = useTotalAmount();
+  const cartLines = useCartLines()
 
   console.log("attributes", attributes);
+  
+
+  // get the sum of all values into cartLines array in cartLines[].cost.totalAmount.amount
+  const subtotal = cartLines.reduce((acc, item) => {
+    return acc + item.cost.totalAmount.amount;
+  }, 0);
+
 
   useEffect(async () => {
     setLineupCardNumber("");
@@ -81,8 +90,8 @@ function App() {
 
         if (data.esValido) {
           const saldo =
-            data.saldo >= totalAmount.amount
-              ? totalAmount.amount.toString()
+            data.saldo >= subtotal
+              ? subtotal.toString()
               : data.saldo.toString();
           setSaldoDisponible(data.saldo);
           setSaldoGastar(saldo);
@@ -117,6 +126,7 @@ function App() {
   return (
     <BlockStack>
       <View padding="base">
+        <Banner status="info">
         <Checkbox
           checked={useLineupCard}
           onChange={setUseLineupCard}
@@ -124,8 +134,10 @@ function App() {
         >
           {useLineupCard
             ? "Eliminar tarjeta Lineup Rewards"
-            : "Usar tarjeta Lineup Rewards para obtener un descuento en toda la compra"}
+            : "Usar tarjeta Lineup Rewards para obtener un descuento"}
         </Checkbox>
+        </Banner>
+        
       </View>
       {useLineupCard && (
         <BlockStack spacing="base">

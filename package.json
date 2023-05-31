@@ -14,7 +14,6 @@
   "dependencies": {
     "@shopify/app": "3.46.0",
     "@shopify/cli": "3.46.0",
-    "graphql-code-generator": "^0.18.2",
     "react": "^17.0.2"
   },
   "author": "Usuario",
@@ -23,5 +22,8 @@
     "web",
     "web/frontend",
     "extensions/*"
-  ]
+  ],
+  "devDependencies": {
+    "graphql-code-generator": "^0.18.2"
+  }
 }

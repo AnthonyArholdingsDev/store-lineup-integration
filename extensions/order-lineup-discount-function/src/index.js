@@ -7,7 +7,7 @@ import { DiscountApplicationStrategy } from "../generated/api";
  */
 
 /**
- * @type {FunctionResult}
+ * @type {FunctionResult} 
  */
 const EMPTY_DISCOUNT = {
   discountApplicationStrategy: DiscountApplicationStrategy.First,
@@ -28,7 +28,7 @@ export default /**
         {
           value: {
             fixedAmount: {
-              amount: Math.trunc(Number(lineupValue?.value)),
+              amount: Number(lineupValue?.value),
             },
           },
           targets: [{ orderSubtotal: { excludedVariantIds: [] } }],

@@ -22,6 +22,7 @@
     }
   },
   "devDependencies": {
+    "graphql-code-generator": "^0.18.2",
     "vitest": "^0.29.8"
   },
   "dependencies": {

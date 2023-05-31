@@ -43,7 +43,7 @@ function App() {
   }, 0);
 
   useBuyerJourneyIntercept(({ canBlockProgress }) => {
-    if (journey) {
+    if (journey && canBlockProgress) {
       return apiCall()
         .then((result) => {
           if (attributes.lineupCardValue.value !== "null") {

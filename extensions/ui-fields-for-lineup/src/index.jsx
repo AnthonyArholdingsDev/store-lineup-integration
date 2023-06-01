@@ -15,6 +15,8 @@ import {
   Spinner,
   useBuyerJourneyIntercept,
   useBuyerJourneyCompleted,
+  useApplyMetafieldsChange,
+  useMetafield,
 } from "@shopify/checkout-ui-extensions-react";
 
 render("Checkout::Dynamic::Render", () => <App />);
@@ -36,6 +38,19 @@ function App() {
 
   console.log("attributes", attributes);
   console.log("journey", useBuyerJourneyCompleted());
+
+  // Define the metafield namespace and key
+  const metafieldNamespace = "loyalty";
+  const metafieldKey = "spiceUpCardNumber";
+
+  // Get a reference to the metafield
+  const deliveryInstructions = useMetafield({
+    namespace: metafieldNamespace,
+    key: metafieldKey,
+  });
+
+  // Set a function to handle updating a metafield
+  const applyMetafieldsChange = useApplyMetafieldsChange();
 
   // get the sum of all values into cartLines array in cartLines[].cost.totalAmount.amount
   const subtotal = cartLines.reduce((acc, item) => {
@@ -154,6 +169,15 @@ function App() {
           type: "updateAttribute",
           value: saldo,
         });
+
+        // Apply the change to the metafield
+        await applyMetafieldsChange({
+          type: "updateMetafield",
+          namespace: metafieldNamespace,
+          key: metafieldKey,
+          valueType: "string",
+          value: lineupCardNumber,
+        });
       } else {
         setValidationError(
           "El número de la tarjeta Lineup Rewards es inválido"
@@ -178,6 +202,14 @@ function App() {
       key: "lineupCardValue",
       type: "updateAttribute",
       value: "null",
+    });
+    // Apply the change to the metafield
+    await applyMetafieldsChange({
+      type: "updateMetafield",
+      namespace: metafieldNamespace,
+      key: metafieldKey,
+      valueType: "string",
+      value: "",
     });
   }
 
@@ -221,7 +253,7 @@ function App() {
           {saldoDisponible !== null && cardAdded && (
             <Banner status="success" title="Tarjeta Lineup Rewards Agregada">
               <BlockStack>
-                <Text>Número de tarjeta: {lineupCardNumber}</Text>
+                <Text>Número de tarjeta: {deliveryInstructions?.value}</Text>
                 <Text>Saldo disponible en la tarjeta: ${saldoDisponible}</Text>
                 <Text appearance="info">
                   Valor de la tarjeta a utilizar en la compra: $ {saldoGastar}

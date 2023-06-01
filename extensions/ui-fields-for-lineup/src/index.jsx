@@ -52,7 +52,7 @@ function App() {
 
   // Define the metafield namespace and key
   const metafieldNamespace = "loyalty";
-  const metafieldKey = "spiceUpCardNumber";
+  const metafieldKey = "lineUpCardNumber";
 
   // Get a reference to the metafield
   const deliveryInstructions = useMetafield({

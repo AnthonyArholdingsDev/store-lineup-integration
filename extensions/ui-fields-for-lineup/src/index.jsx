@@ -10,13 +10,13 @@ import {
   Button,
   useExtensionCapability,
   useApplyAttributeChange,
-  useAttributes,
   useCartLines,
   Spinner,
   useBuyerJourneyIntercept,
   // useBuyerJourneyCompleted,
   useApplyMetafieldsChange,
   useMetafield,
+  InlineLayout,
 } from "@shopify/checkout-ui-extensions-react";
 
 render("Checkout::Dynamic::Render", () => <App />);
@@ -76,7 +76,8 @@ function App() {
         reason: "La Tarjeta Lineup Rewards ha actualizado su saldo",
         errors: [
           {
-            message: "El saldo de su tarjeta Lineup Rewards ha cambiado",
+            message:
+              "El saldo de su tarjeta Lineup Rewards ha cambiado, eliminela o acepte el nuevo saldo para proceder con el pago",
           },
         ],
       };
@@ -87,18 +88,31 @@ function App() {
     }
   });
 
-  // Use effect to clear the card number and value when the user unchecks the checkbox
-  useEffect(() => {
+  function resetCard() {
     setLineupCardNumber("");
     setValidationError("");
     setSaldoDisponible(null);
     setCardAdded(false);
-    setIsTimerRunning(false); // stop the timer loop
+    setIsTimerRunning(false);
+    setIsCardValueUpdated(false);
     applyAttributeChange({
       key: "lineupCardValue",
       type: "updateAttribute",
       value: "null",
     });
+    // Apply the change to the metafield
+    applyMetafieldsChange({
+      type: "updateMetafield",
+      namespace: metafieldNamespace,
+      key: metafieldKey,
+      valueType: "string",
+      value: "",
+    });
+  }
+
+  // Use effect to clear the card number and value when the user unchecks the checkbox
+  useEffect(() => {
+    resetCard();
   }, [useLineupCard]);
 
   // function to clear validation errors
@@ -166,7 +180,7 @@ function App() {
         setIsTimerRunning(true);
 
         // Start the timer loop
-        startTimerLoop();
+        startTimerLoop(data.saldo);
       } else {
         setValidationError(
           "El número de la tarjeta Lineup Rewards es inválido"
@@ -184,50 +198,53 @@ function App() {
   }
 
   // Function to start the timer loop
-  async function startTimerLoop() {
-    let previousSaldo = saldoDisponible;
+  async function startTimerLoop(saldo) {
+    let previousSaldo = saldo;
 
     //testing
     loop = 0;
 
     // Start the timer loop
     while (isTimerRunningRef.current) {
-      await sleep(5000); // Wait for 5 seconds / 30Seconds
+      // Wait for 5 seconds / 30Seconds
+      // await sleep(30000);
+      await sleep(1000);
+
+      let updatedData = await apiCall();
+      let updatedSaldoGastar =
+        updatedData.saldo >= subtotal
+          ? subtotal.toString()
+          : updatedData.saldo.toString();
 
       //testing
       console.log("loop", loop);
       if (loop === 3) {
-        setIsCardValueUpdated(true);
-        setIsTimerRunning(false);
-        break;
+        updatedData.saldo = 300;
+        updatedSaldoGastar =
+          updatedData.saldo >= subtotal
+            ? subtotal.toString()
+            : updatedData.saldo.toString();
       }
 
-      const updatedData = await apiCall();
-      const updatedSaldo =
-        updatedData.saldo >= subtotal
-          ? subtotal.toString()
-          : updatedData.saldo.toString();
-      setSaldoDisponible(updatedData.saldo);
-      setSaldoGastar(updatedSaldo);
+      console.log("previousSaldo", previousSaldo);
+      console.log("saldoGastar", updatedData.saldo);
+      //end testing
 
       if (updatedData.saldo !== previousSaldo) {
         console.log("saldo actualizado");
+
+        setSaldoDisponible(updatedData.saldo);
+        setSaldoGastar(updatedSaldoGastar);
+        setIsCardValueUpdated(true);
+        setIsTimerRunning(false);
+
         // Update the attribute value and metafield with the updated card value
         await applyAttributeChange({
           key: "lineupCardValue",
           type: "updateAttribute",
-          value: updatedSaldo,
+          value: updatedSaldoGastar,
         });
 
-        await applyMetafieldsChange({
-          type: "updateMetafield",
-          namespace: metafieldNamespace,
-          key: metafieldKey,
-          valueType: "string",
-          value: lineupCardNumber,
-        });
-        setIsCardValueUpdated(true);
-        setIsTimerRunning(false);
         break;
       }
 
@@ -245,24 +262,8 @@ function App() {
   }
 
   // function to handle the remove card button
-  function handleRemoveCard() {
-    setCardAdded(false);
-    setSaldoDisponible(null);
-    setLineupCardNumber("");
-    setIsTimerRunning(false); // stop the timer loop
-    applyAttributeChange({
-      key: "lineupCardValue",
-      type: "updateAttribute",
-      value: "null",
-    });
-    // Apply the change to the metafield
-    applyMetafieldsChange({
-      type: "updateMetafield",
-      namespace: metafieldNamespace,
-      key: metafieldKey,
-      valueType: "string",
-      value: "",
-    });
+  function handleAccept() {
+    setIsCardValueUpdated(false);
   }
 
   // Return the JSX to render
@@ -314,9 +315,23 @@ function App() {
                 <Text appearance="info">
                   Valor de la tarjeta a utilizar en la compra: $ {saldoGastar}
                 </Text>
-                <Button kind="secondary" onPress={handleRemoveCard}>
-                  Eliminar Tarjeta
-                </Button>
+
+                {!isCardValueUpdated && (
+                  <Button kind="secondary" onPress={resetCard}>
+                    Eliminar tarjeta
+                  </Button>
+                )}
+
+                {isCardValueUpdated && (
+                  <InlineLayout columns={["fill", "fill"]} spacing="base">
+                    <Button kind="secondary" onPress={resetCard}>
+                      Eliminar tarjeta
+                    </Button>
+                    <Button kind="primary" onPress={handleAccept}>
+                      Aceptar el nuevo valor
+                    </Button>
+                  </InlineLayout>
+                )}
               </BlockStack>
             </Banner>
           )}

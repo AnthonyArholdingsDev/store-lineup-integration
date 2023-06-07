@@ -7,6 +7,8 @@ extension_points = [
 
 [capabilities]
 block_progress = true
+network_access = true
+
 
 # [[metafields]]
 # namespace = "my-namespace"

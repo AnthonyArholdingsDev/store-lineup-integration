@@ -19,10 +19,12 @@ import {
   InlineLayout,
 } from "@shopify/checkout-ui-extensions-react";
 
+//Se debe agregar un campo para cedula/pasaporte (metafield igual) y debe ser requerido
+
 render("Checkout::Dynamic::Render", () => <App />);
 
 const API_URL =
-  "https://cors-anywhere.herokuapp.com/https://b258-2800-bf0-8014-9d-81e4-b6f-32f6-8124.ngrok-free.app";
+  "https://cors-anywhere.herokuapp.com/https://b1ab-190-63-99-141.ngrok-free.app";
 const MAIN_TOKEN =
   "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJjcmVkZW50aWFsX2lkIjoiYThlNThhMzAtODRlZi00YjMyLWFkN2MtYzcwYWZjMDkyMzBkIiwiZXhwIjoxNjg2NjY4MDI1LCJvcmlnX2lhdCI6MTY4NjA2MzIyNSwiaXNzIjoibG9jYWxob3N0LmNvbSJ9.XlRK03A6cjWzC2METd1oR-MjsXrJ5Q065LtnITVtGpM";
 const API_KEY = "9b2c299397f0cb50d8512e6067e18e1adb33a733";

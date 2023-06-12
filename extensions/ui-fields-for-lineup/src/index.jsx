@@ -25,7 +25,7 @@ render("Checkout::Dynamic::Render", () => <App />);
 function App() {
   //Main variables
   const API_URL =
-    "https://cors-anywhere.herokuapp.com/https://198e-2800-bf0-8014-9d-c93-236d-68d-10cd.ngrok-free.app";
+    "https://cors-anywhere.herokuapp.com/https://f616-181-198-18-186.ngrok-free.app/";
   const MAIN_TOKEN =
     "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJjcmVkZW50aWFsX2lkIjoiYThlNThhMzAtODRlZi00YjMyLWFkN2MtYzcwYWZjMDkyMzBkIiwiZXhwIjoxNjg2NjY4MDI1LCJvcmlnX2lhdCI6MTY4NjA2MzIyNSwiaXNzIjoibG9jYWxob3N0LmNvbSJ9.XlRK03A6cjWzC2METd1oR-MjsXrJ5Q065LtnITVtGpM";
   const API_KEY = "9b2c299397f0cb50d8512e6067e18e1adb33a733";
@@ -232,7 +232,7 @@ function App() {
         setIsTimerRunning(true);
 
         // Start the timer loop
-        startTimerLoop(data.saldo);
+        startTimerLoop(data.saldo)
       } else {
         setIsLineupCardValid(
           "El número de la tarjeta Lineup Rewards o la cédula son inválidos"
@@ -508,4 +508,3 @@ function App() {
 }
 
 export default App;
->>>>>>> ff066a68141bcd89953971845cef0d819a55f5af

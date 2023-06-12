@@ -4,7 +4,4 @@ query Input {
       value
     }
   }
-  CartCost{
-    subtotalAmount
-  }
 }

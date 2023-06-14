@@ -1,0 +1,291 @@
+{
+  "id": 5417099624757,
+  "admin_graphql_api_id": "gid://shopify/Order/5417099624757",
+  "app_id": 580111,
+  "browser_ip": "181.198.18.186",
+  "buyer_accepts_marketing": false,
+  "cancel_reason": "None",
+  "cancelled_at": "None",
+  "cart_token": "9af45d4ddc1d14486171e21a4cd0b0dd",
+  "checkout_id": 36734668013877,
+  "checkout_token": "e2d20bd311541cff99ac58e5d5f2e954",
+  "client_details": {
+    "accept_language": "en-EC",
+    "browser_height": "None",
+    "browser_ip": "181.198.18.186",
+    "browser_width": "None",
+    "session_hash": "None",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36 Edg/114.0.1823.43"
+  },
+  "closed_at": "None",
+  "company": "None",
+  "confirmed": true,
+  "contact_email": "anthony.villegas@ar-holdings.com",
+  "created_at": "2023-06-12T13:24:44-04:00",
+  "currency": "USD",
+  "current_subtotal_price": "0.00",
+  "current_subtotal_price_set": {
+    "shop_money": { "amount": "0.00", "currency_code": "USD" },
+    "presentment_money": { "amount": "0.00", "currency_code": "USD" }
+  },
+  "current_total_additional_fees_set": "None",
+  "current_total_discounts": "885.95",
+  "current_total_discounts_set": {
+    "shop_money": { "amount": "885.95", "currency_code": "USD" },
+    "presentment_money": { "amount": "885.95", "currency_code": "USD" }
+  },
+  "current_total_duties_set": "None",
+  "current_total_price": "0.00",
+  "current_total_price_set": {
+    "shop_money": { "amount": "0.00", "currency_code": "USD" },
+    "presentment_money": { "amount": "0.00", "currency_code": "USD" }
+  },
+  "current_total_tax": "0.00",
+  "current_total_tax_set": {
+    "shop_money": { "amount": "0.00", "currency_code": "USD" },
+    "presentment_money": { "amount": "0.00", "currency_code": "USD" }
+  },
+  "customer_locale": "en-EC",
+  "device_id": "None",
+  "discount_codes": [],
+  "email": "anthony.villegas@ar-holdings.com",
+  "estimated_taxes": false,
+  "financial_status": "paid",
+  "fulfillment_status": "None",
+  "landing_site": "/password",
+  "landing_site_ref": "None",
+  "location_id": "None",
+  "merchant_of_record_app_id": "None",
+  "name": "#1016",
+  "note": "None",
+  "note_attributes": [{ "name": "lineupCardValue", "value": "885.95" }],
+  "number": 16,
+  "order_number": 1016,
+  "order_status_url": "https://ar-holdings-extensions-web.myshopify.com/76927435061/orders/72501d4ace3bf45febb933fcc1e43a6d/authenticate?key=d0335f21dbdd58083fa8901a2d170a7b",
+  "original_total_additional_fees_set": "None",
+  "original_total_duties_set": "None",
+  "payment_gateway_names": [],
+  "phone": "None",
+  "po_number": "None",
+  "presentment_currency": "USD",
+  "processed_at": "2023-06-12T13:24:42-04:00",
+  "reference": "bef6edbbb49fbbd8a25caccd1682b758",
+  "referring_site": "https://speed-produced-rim-thursday.trycloudflare.com/",
+  "source_identifier": "bef6edbbb49fbbd8a25caccd1682b758",
+  "source_name": "web",
+  "source_url": "None",
+  "subtotal_price": "0.00",
+  "subtotal_price_set": {
+    "shop_money": { "amount": "0.00", "currency_code": "USD" },
+    "presentment_money": { "amount": "0.00", "currency_code": "USD" }
+  },
+  "tags": "",
+  "tax_lines": [],
+  "taxes_included": false,
+  "test": false,
+  "token": "72501d4ace3bf45febb933fcc1e43a6d",
+  "total_discounts": "885.95",
+  "total_discounts_set": {
+    "shop_money": { "amount": "885.95", "currency_code": "USD" },
+    "presentment_money": { "amount": "885.95", "currency_code": "USD" }
+  },
+  "total_line_items_price": "885.95",
+  "total_line_items_price_set": {
+    "shop_money": { "amount": "885.95", "currency_code": "USD" },
+    "presentment_money": { "amount": "885.95", "currency_code": "USD" }
+  },
+  "total_outstanding": "0.00",
+  "total_price": "0.00",
+  "total_price_set": {
+    "shop_money": { "amount": "0.00", "currency_code": "USD" },
+    "presentment_money": { "amount": "0.00", "currency_code": "USD" }
+  },
+  "total_shipping_price_set": {
+    "shop_money": { "amount": "0.00", "currency_code": "USD" },
+    "presentment_money": { "amount": "0.00", "currency_code": "USD" }
+  },
+  "total_tax": "0.00",
+  "total_tax_set": {
+    "shop_money": { "amount": "0.00", "currency_code": "USD" },
+    "presentment_money": { "amount": "0.00", "currency_code": "USD" }
+  },
+  "total_tip_received": "0.00",
+  "total_weight": 0,
+  "updated_at": "2023-06-12T13:25:45-04:00",
+  "user_id": "None",
+  "billing_address": {
+    "first_name": "None",
+    "address1": "Kennedy",
+    "phone": "None",
+    "city": "Guayaquil",
+    "zip": "090403",
+    "province": "None",
+    "country": "Ecuador",
+    "last_name": "asdassda",
+    "address2": "None",
+    "company": "None",
+    "latitude": "None",
+    "longitude": "None",
+    "name": "asdassda",
+    "country_code": "EC",
+    "province_code": "None"
+  },
+  "customer": {
+    "id": 7016319811893,
+    "email": "anthony.villegas@ar-holdings.com",
+    "accepts_marketing": false,
+    "created_at": "2023-05-29T19:48:38-04:00",
+    "updated_at": "2023-06-12T13:24:44-04:00",
+    "first_name": "None",
+    "last_name": "villegas",
+    "state": "disabled",
+    "note": "None",
+    "verified_email": true,
+    "multipass_identifier": "None",
+    "tax_exempt": false,
+    "phone": "None",
+    "email_marketing_consent": {
+      "state": "not_subscribed",
+      "opt_in_level": "single_opt_in",
+      "consent_updated_at": "None"
+    },
+    "sms_marketing_consent": "None",
+    "tags": "",
+    "currency": "USD",
+    "accepts_marketing_updated_at": "2023-05-29T19:48:38-04:00",
+    "marketing_opt_in_level": "None",
+    "tax_exemptions": [],
+    "admin_graphql_api_id": "gid://shopify/Customer/7016319811893",
+    "default_address": {
+      "id": 9277036757301,
+      "customer_id": 7016319811893,
+      "first_name": "None",
+      "last_name": "asdassda",
+      "company": "None",
+      "address1": "Kennedy",
+      "address2": "None",
+      "city": "Guayaquil",
+      "province": "None",
+      "country": "Ecuador",
+      "zip": "090403",
+      "phone": "None",
+      "name": "asdassda",
+      "province_code": "None",
+      "country_code": "EC",
+      "country_name": "Ecuador",
+      "default": true
+    }
+  },
+  "discount_applications": [
+    {
+      "target_type": "line_item",
+      "type": "automatic",
+      "value": "885.95",
+      "value_type": "fixed_amount",
+      "allocation_method": "across",
+      "target_selection": "all",
+      "title": "Descuento de tarjeta Lineup"
+    }
+  ],
+  "fulfillments": [],
+  "line_items": [
+    {
+      "id": 14019238232373,
+      "admin_graphql_api_id": "gid://shopify/LineItem/14019238232373",
+      "attributed_staffs": [],
+      "fulfillable_quantity": 1,
+      "fulfillment_service": "manual",
+      "fulfillment_status": "None",
+      "gift_card": false,
+      "grams": 0,
+      "name": "The Videographer Snowboard",
+      "price": "885.95",
+      "price_set": {
+        "shop_money": { "amount": "885.95", "currency_code": "USD" },
+        "presentment_money": { "amount": "885.95", "currency_code": "USD" }
+      },
+      "product_exists": true,
+      "product_id": 8315864187189,
+      "properties": [],
+      "quantity": 1,
+      "requires_shipping": true,
+      "sku": "",
+      "taxable": true,
+      "title": "The Videographer Snowboard",
+      "total_discount": "0.00",
+      "total_discount_set": {
+        "shop_money": { "amount": "0.00", "currency_code": "USD" },
+        "presentment_money": { "amount": "0.00", "currency_code": "USD" }
+      },
+      "variant_id": 45173240627509,
+      "variant_inventory_management": "shopify",
+      "variant_title": "None",
+      "vendor": "Ar Holdings Extensions Web",
+      "tax_lines": [
+        {
+          "channel_liable": false,
+          "price": "0.00",
+          "price_set": {
+            "shop_money": { "amount": "0.00", "currency_code": "USD" },
+            "presentment_money": { "amount": "0.00", "currency_code": "USD" }
+          },
+          "rate": 0.12,
+          "title": "VAT"
+        }
+      ],
+      "duties": [],
+      "discount_allocations": [
+        {
+          "amount": "885.95",
+          "amount_set": {
+            "shop_money": { "amount": "885.95", "currency_code": "USD" },
+            "presentment_money": { "amount": "885.95", "currency_code": "USD" }
+          },
+          "discount_application_index": 0
+        }
+      ]
+    }
+  ],
+  "payment_terms": "None",
+  "refunds": [],
+  "shipping_address": {
+    "first_name": "None",
+    "address1": "Kennedy",
+    "phone": "None",
+    "city": "Guayaquil",
+    "zip": "090403",
+    "province": "None",
+    "country": "Ecuador",
+    "last_name": "asdassda",
+    "address2": "None",
+    "company": "None",
+    "latitude": -2.2246277,
+    "longitude": -79.9374582,
+    "name": "asdassda",
+    "country_code": "EC",
+    "province_code": "None"
+  },
+  "shipping_lines": [
+    {
+      "id": 4389759713589,
+      "carrier_identifier": "650f1a14fa979ec5c74d063e968411d4",
+      "code": "Standard",
+      "discounted_price": "0.00",
+      "discounted_price_set": {
+        "shop_money": { "amount": "0.00", "currency_code": "USD" },
+        "presentment_money": { "amount": "0.00", "currency_code": "USD" }
+      },
+      "phone": "None",
+      "price": "0.00",
+      "price_set": {
+        "shop_money": { "amount": "0.00", "currency_code": "USD" },
+        "presentment_money": { "amount": "0.00", "currency_code": "USD" }
+      },
+      "requested_fulfillment_service_id": "None",
+      "source": "shopify",
+      "title": "Standard",
+      "tax_lines": [],
+      "discount_allocations": []
+    }
+  ]
+}

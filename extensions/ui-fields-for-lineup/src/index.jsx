@@ -13,27 +13,32 @@ import {
   useCartLines,
   Spinner,
   useBuyerJourneyIntercept,
+  useBuyerJourneyCompleted,
   useApplyMetafieldsChange,
   useMetafield,
   InlineLayout,
 } from "@shopify/checkout-ui-extensions-react";
-
-//Se debe agregar un campo para cedula/pasaporte (metafield igual) y debe ser requerido
 
 render("Checkout::Dynamic::Render", () => <App />);
 
 function App() {
   //Main variables
   const API_URL =
-    "https://cors-anywhere.herokuapp.com/https://f616-181-198-18-186.ngrok-free.app/";
+    "https://cors-anywhere.herokuapp.com/https://34a7-2800-bf0-8014-9d-79b1-b58-7515-45a3.ngrok-free.app";
+
   const MAIN_TOKEN =
-    "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJjcmVkZW50aWFsX2lkIjoiYThlNThhMzAtODRlZi00YjMyLWFkN2MtYzcwYWZjMDkyMzBkIiwiZXhwIjoxNjg2NjY4MDI1LCJvcmlnX2lhdCI6MTY4NjA2MzIyNSwiaXNzIjoibG9jYWxob3N0LmNvbSJ9.XlRK03A6cjWzC2METd1oR-MjsXrJ5Q065LtnITVtGpM";
+    "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJjcmVkZW50aWFsX2lkIjoiYThlNThhMzAtODRlZi00YjMyLWFkN2MtYzcwYWZjMDkyMzBkIiwiZXhwIjoxNjg3Mjc4ODM0LCJvcmlnX2lhdCI6MTY4NjY3NDAzNCwiaXNzIjoibG9jYWxob3N0LmNvbSJ9.PvcMMzzwihcP9Nny-3xM8uv-VUm5vmP7xHrI8HOkids";
   const API_KEY = "9b2c299397f0cb50d8512e6067e18e1adb33a733";
   const API_SECRET = "^4-p8ijc^2sg9nh41&e$-oorj@66z@qs7f_qeofat=fkmn$hb3";
   // Define the metafield namespace and key
   const metafieldNamespace = "loyalty";
   const lineUpCardNumberKey = "lineUpCardNumber";
-  const lineUpClientIdNumberKey = "lineUpClientIdNumber";
+  //100799072
+  //081794
+
+  // Interval
+  var timerInterval = null;
+  var isTimerRunning = null;
 
   // Set up the checkbox state
   const [useLineupCard, setUseLineupCard] = useState(false);
@@ -45,17 +50,23 @@ function App() {
   const [cardAdded, setCardAdded] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const [isCardValueUpdated, setIsCardValueUpdated] = useState(false);
-  const [isTimerRunning, setIsTimerRunning] = useState(false);
   const [token, setToken] = useState(MAIN_TOKEN);
-  const [cedula, setCedula] = useState("");
-  const [isCedulaValid, setIsCedulaValid] = useState("");
 
-  // is timer reference
-  const isTimerRunningRef = useRef(isTimerRunning);
-  isTimerRunningRef.current = isTimerRunning;
+  //Setup token validation
+  const [isTokenValidating, setIsTokenValidating] = useState(false);
+  const [isTokenValid, setIsTokenValid] = useState(false);
+  const [tokenText, setTokenText] = useState("");
+  const [tokenError, setTokenError] = useState("");
+  var temporalToken = null;
 
-  //testing
-  var loop = 0;
+  //buyer journey
+  const journey = useBuyerJourneyCompleted();
+  if (journey) {
+    console.log("journey complete", journey);
+    if (tokenText !== "" && temporalToken !== null) {
+      deleteToken();
+    }
+  }
 
   // Set the entry point for the extension
   const canBlockProgress = useExtensionCapability("block_progress");
@@ -67,11 +78,6 @@ function App() {
   const lineUpCardNumberMetafield = useMetafield({
     namespace: metafieldNamespace,
     key: lineUpCardNumberKey,
-  });
-
-  const lineUpClientIdNumberMetafield = useMetafield({
-    namespace: metafieldNamespace,
-    key: lineUpClientIdNumberKey,
   });
 
   // Set a function to handle updating a metafield
@@ -103,15 +109,17 @@ function App() {
   });
 
   function resetCard() {
+    //card
     setLineupCardNumber("");
     setIsLineupCardValid("");
-    setCedula("");
-    setIsCedulaValid("");
     setSaldoDisponible(null);
     setCardAdded(false);
+    //clients
     setClientDetails(null);
-    setIsTimerRunning(false);
     setIsCardValueUpdated(false);
+    // Stop the timer
+    stopTimerLoop();
+    // Apply the change to the attribute
     applyAttributeChange({
       key: "lineupCardValue",
       type: "updateAttribute",
@@ -125,14 +133,14 @@ function App() {
       valueType: "string",
       value: "",
     });
-    // Apply the change to the metafield lineup client
-    applyMetafieldsChange({
-      type: "updateMetafield",
-      namespace: metafieldNamespace,
-      key: lineUpClientIdNumberKey,
-      valueType: "string",
-      value: "",
-    });
+    // deletes the current token
+    if (tokenText !== "" && temporalToken !== null) {
+      deleteToken();
+    }
+    setIsTokenValidating(false);
+    setIsTokenValid(false);
+    setTokenText("");
+    temporalToken = null;
   }
 
   // Use effect to clear the card number and value when the user unchecks the checkbox
@@ -143,7 +151,60 @@ function App() {
   // function to clear validation errors
   function clearValidationErrors() {
     setIsLineupCardValid("");
-    setIsCedulaValid("");
+    setTokenError("");
+  }
+
+  async function handleEmailCodeButtonClick() {
+    // Inicializa un array para almacenar los errores de validación.
+    let errors = {
+      lineup: "",
+    };
+
+    //Start validations
+    const regex = /^[0-9]+$/;
+
+    //Validaciones de Lineup
+    if (lineupCardNumber.trim() === "") {
+      errors.lineup = "Ingresa el número de tarjeta";
+    } else if (lineupCardNumber.length < 9) {
+      errors.lineup = "La tarjeta debe tener más de 9 dígitos";
+    } else if (!regex.test(lineupCardNumber)) {
+      errors.lineup = "La tarjeta solo debe contener números";
+    }
+
+    // Si hay errores, establece los mensajes de error y retorna.
+    if (errors.lineup) {
+      setIsLineupCardValid(errors.lineup);
+      return;
+    }
+
+    // Add a loading spinner
+    setIsLoading(true);
+
+    // Simulate an API call
+    const data = await createToken();
+
+    // Remove the loading spinner
+    setIsLoading(false);
+
+    if (data.sent) {
+      setIsTokenValidating(true);
+      setCardAdded(true);
+      temporalToken = data.token;
+
+      // Apply the change to the metafield lineup number
+      await applyMetafieldsChange({
+        type: "updateMetafield",
+        namespace: metafieldNamespace,
+        key: lineUpCardNumberKey,
+        valueType: "string",
+        value: lineupCardNumber,
+      });
+    } else {
+      setIsLineupCardValid(
+        "El número de la tarjeta Lineup Rewards o la cédula son inválidos"
+      );
+    }
   }
 
   // function to handle the checkbox change
@@ -151,35 +212,24 @@ function App() {
     if (useLineupCard) {
       // Inicializa un array para almacenar los errores de validación.
       let errors = {
-        lineup: "",
-        cedula: "",
+        token: "",
       };
 
       //Start validations
       const regex = /^[0-9]+$/;
 
       //Validaciones de Lineup
-      if (lineupCardNumber.trim() === "") {
-        errors.lineup = "Ingresa el número de tarjeta";
-      } else if (lineupCardNumber.length < 9) {
-        errors.lineup = "La tarjeta debe tener más de 9 dígitos";
-      } else if (!regex.test(lineupCardNumber)) {
-        errors.lineup = "La tarjeta solo debe contener números";
-      }
-
-      //Validaciones de Cedula
-      if (cedula.trim() === "") {
-        errors.cedula = "Ingresa su Identificación";
-      } else if (cedula.length < 9) {
-        errors.cedula = "La Identificación debe tener mínimo 9 dígitos";
-      } else if (!regex.test(cedula)) {
-        errors.cedula = "La Identificación solo debe contener números";
+      if (tokenText.trim() === "") {
+        errors.token = "Ingresa un token";
+      } else if (tokenText.length < 6) {
+        errors.token = "El token debe tener más de 6 dígitos";
+      } else if (!regex.test(tokenText)) {
+        errors.lineup = "El token solo debe contener números";
       }
 
       // Si hay errores, establece los mensajes de error y retorna.
-      if (errors.lineup || errors.cedula) {
-        setIsLineupCardValid(errors.lineup);
-        setIsCedulaValid(errors.cedula);
+      if (errors.lineup) {
+        setTokenError(errors.lineup);
         return;
       }
 
@@ -187,7 +237,7 @@ function App() {
       setIsLoading(true);
 
       // Simulate an API call
-      const data = await apiCall();
+      const data = await tokenCall();
 
       // Remove the loading spinner
       setIsLoading(false);
@@ -197,7 +247,6 @@ function App() {
           data.saldo >= subtotal ? subtotal.toString() : data.saldo.toString();
         setSaldoDisponible(data.saldo);
         setSaldoGastar(saldo);
-        setCardAdded(true);
         setClientDetails(data.extra);
         clearValidationErrors();
 
@@ -208,45 +257,76 @@ function App() {
           value: saldo,
         });
 
-        // Apply the change to the metafield lineup number
-        await applyMetafieldsChange({
-          type: "updateMetafield",
-          namespace: metafieldNamespace,
-          key: lineUpCardNumberKey,
-          valueType: "string",
-          value: lineupCardNumber,
-        });
-
-        // Apply the change to the metafield lineup client
-        await applyMetafieldsChange({
-          type: "updateMetafield",
-          namespace: metafieldNamespace,
-          key: lineUpClientIdNumberKey,
-          valueType: "string",
-          value: cedula,
-        });
-
         //----------------------Timer----------------------//
 
-        // Set the flag to start the timer
-        setIsTimerRunning(true);
-
+        isTimerRunning = true;
         // Start the timer loop
-        startTimerLoop(data.saldo)
+        startTimerLoop(data.saldo);
+
+        setIsTokenValid(true);
+        setIsTokenValidating(false);
       } else {
-        setIsLineupCardValid(
-          "El número de la tarjeta Lineup Rewards o la cédula son inválidos"
-        );
-        setIsCedulaValid(
-          "El número de la tarjeta Lineup Rewards o la cédula son inválidos"
+        setTokenError(
+          "El token no es válido, por favor verifica su correo electrónico"
         );
       }
     }
   }
 
-  async function apiCall() {
-    //100799072
+  async function deleteToken() {
+    //Headers
+    var myHeaders = new Headers();
+    myHeaders.append("X-Requested-With", "");
+    myHeaders.append("Content-Type", "application/json");
+    myHeaders.append("Authorization", `Bearer ${token}`);
 
+    //Body
+    if (temporalToken) {
+      var raw = JSON.stringify({
+        token: temporalToken,
+      });
+
+      temporalToken = null;
+    } else {
+      var raw = JSON.stringify({
+        token: tokenText,
+      });
+    }
+
+    //options
+    var requestOptions = {
+      method: "POST",
+      headers: myHeaders,
+      body: raw,
+      redirect: "follow",
+    };
+
+    //Call
+    try {
+      const response = await fetch(
+        API_URL + "/api/cliente/eliminar-token-validacion/",
+        requestOptions
+      );
+
+      if (response.status === 404 || response.status === 400) {
+        return {
+          eliminado: false,
+        };
+      }
+
+      const responseData = await response.json();
+      return {
+        eliminado: true,
+        data: responseData,
+      };
+    } catch (error) {
+      // Manejo de errores de la llamada fetch
+      console.error("Error en la llamada API:", error);
+      throw error;
+    }
+  }
+
+  async function createToken() {
     //Headers
     var myHeaders = new Headers();
     myHeaders.append("X-Requested-With", "");
@@ -257,7 +337,6 @@ function App() {
     var raw = JSON.stringify({
       tarjeta: {
         numero_de_tarjeta: lineupCardNumber,
-        cedula: cedula,
       },
     });
 
@@ -272,7 +351,7 @@ function App() {
     //Call
     try {
       const response = await fetch(
-        API_URL + "/api/cliente/obtener-balance-easy/",
+        API_URL + "/api/cliente/crear-token-validacion/",
         requestOptions
       );
 
@@ -285,13 +364,58 @@ function App() {
         requestOptions.headers.set("Authorization", `Bearer ${newToken}`);
 
         // Intentamos la llamada nuevamente
-        const response = await fetch(apiUrl, requestOptions);
+        const response = await fetch(
+          API_URL + "/api/cliente/crear-token-validacion/",
+          requestOptions
+        );
 
         // Si el status sigue siendo 401, lanzamos un error
         if (response.status === 401) {
           throw new Error("Error de autenticación después de renovar el token");
         }
       }
+
+      if (response.status === 404 || response.status === 400) {
+        return {
+          sent: false,
+        };
+      }
+
+      const responseData = await response.json();
+      return responseData;
+    } catch (error) {
+      // Manejo de errores de la llamada fetch
+      console.error("Error en la llamada API:", error);
+      throw error;
+    }
+  }
+
+  async function tokenCall() {
+    //Headers
+    var myHeaders = new Headers();
+    myHeaders.append("X-Requested-With", "");
+    myHeaders.append("Content-Type", "application/json");
+    myHeaders.append("Authorization", `Bearer ${token}`);
+
+    //Body
+    var raw = JSON.stringify({
+      token: tokenText,
+    });
+
+    //options
+    var requestOptions = {
+      method: "POST",
+      headers: myHeaders,
+      body: raw,
+      redirect: "follow",
+    };
+
+    //Call
+    try {
+      const response = await fetch(
+        API_URL + "/api/cliente/obtener-balance-token/",
+        requestOptions
+      );
 
       if (response.status === 404) {
         return {
@@ -315,29 +439,28 @@ function App() {
       };
     } catch (error) {
       // Manejo de errores de la llamada fetch
-      console.error("Error en la llamada API:", error);
       throw error;
     }
   }
 
-  // Function to start the timer loop
+  // Función para iniciar el bucle del temporizador
   async function startTimerLoop(saldo) {
     let previousSaldo = saldo;
 
-    // Start the timer loop
-    while (isTimerRunningRef.current) {
-      // Wait for 5 seconds / 30Seconds
-      await sleep(30000);
-      // await sleep(1000);
+    // Asignar el intervalo a la variable de referencia
+    timerInterval = setInterval(async () => {
+      if (!isTimerRunning) {
+        clearInterval(timerInterval);
+        return;
+      }
 
-      let updatedData = await apiCall();
+      let updatedData = await tokenCall();
       let updatedSaldoGastar =
         updatedData.saldo >= subtotal
           ? subtotal.toString()
           : updatedData.saldo.toString();
 
       //testing
-
       console.log("previousSaldo", previousSaldo);
       console.log("saldoGastar", updatedData.saldo);
       //end testing
@@ -348,29 +471,27 @@ function App() {
         setSaldoDisponible(updatedData.saldo);
         setSaldoGastar(updatedSaldoGastar);
         setIsCardValueUpdated(true);
-        setIsTimerRunning(false);
 
-        // Update the attribute value and metafield with the updated card value
+        // Actualizar el valor del atributo y metafield con el valor de la tarjeta actualizado
         await applyAttributeChange({
           key: "lineupCardValue",
           type: "updateAttribute",
           value: updatedSaldoGastar,
         });
 
-        break;
+        // Limpiar el intervalo
+        clearInterval(timerInterval);
       }
 
-      loop++;
       previousSaldo = updatedData.saldo;
-
-      // Wait for the next iteration
-      await Promise.resolve();
-    }
+    }, 30000); // Intervalo de 30 segundos
   }
 
-  // Utility function to sleep for a specified amount of time
-  function sleep(ms) {
-    return new Promise((resolve) => setTimeout(resolve, ms));
+  // Función para detener el bucle del temporizador
+  // Función para detener el bucle del temporizador
+  function stopTimerLoop() {
+    isTimerRunning = false;
+    if (timerInterval) clearInterval(timerInterval);
   }
 
   // function to handle the remove card button
@@ -440,15 +561,6 @@ function App() {
           {!cardAdded && (
             <BlockStack spacing="base">
               <TextField
-                label="Cedula o Pasaporte"
-                value={cedula}
-                onChange={setCedula}
-                onInput={clearValidationErrors}
-                required={canBlockProgress}
-                disabled={isLoading ? true : false}
-                error={isCedulaValid}
-              />
-              <TextField
                 label="Número de tarjeta Lineup Rewards"
                 value={lineupCardNumber}
                 onChange={setLineupCardNumber}
@@ -459,21 +571,48 @@ function App() {
               />
               <Button
                 disabled={isLoading ? true : false}
-                onPress={handleButtonClick}
+                onPress={handleEmailCodeButtonClick}
               >
                 Agregar tarjeta lineup para esta compra
               </Button>
               {isLoading && <Spinner />} {/* Loader */}
             </BlockStack>
           )}
-          {saldoDisponible !== null && cardAdded && (
+          {
+            isTokenValidating && (
+              <BlockStack spacing="base">
+                <TextField
+                  label="Ingrese el token que fue enviado al correo registrado con Lineup Rewards"
+                  value={tokenText}
+                  onChange={setTokenText}
+                  onInput={clearValidationErrors}
+                  required={canBlockProgress}
+                  disabled={isLoading ? true : false}
+                  error={tokenError}
+                />
+                <InlineLayout columns={["fill", "fill"]} spacing="base">
+                  <Button kind="secondary" onPress={resetCard}>
+                    Cambiar de tarjeta
+                  </Button>
+                  <Button
+                    kind="primary"
+                    disabled={isLoading ? true : false}
+                    onPress={handleButtonClick}
+                  >
+                    Validar código
+                  </Button>
+                </InlineLayout>
+                {isLoading && <Spinner />} {/* Loader */}
+              </BlockStack>
+            ) /* Token validation loader */
+          }
+          {isTokenValid && saldoDisponible !== null && cardAdded && (
             <Banner
               status={!isCardValueUpdated ? "success" : "warning"}
               title="Tarjeta Lineup Rewards Agregada"
             >
               <BlockStack>
-                <Text>Cliente: {clientDetails?.correo}</Text>
-                <Text>Cédula: {lineUpClientIdNumberMetafield?.value}</Text>
+                <Text>Cliente: {clientDetails?.nombre}</Text>
                 <Text>
                   Número de tarjeta: {lineUpCardNumberMetafield?.value}
                 </Text>

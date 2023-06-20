@@ -24,7 +24,7 @@ render("Checkout::Dynamic::Render", () => <App />);
 function App() {
   //Main variables
   const API_URL =
-    "https://cors-anywhere.herokuapp.com/https://34a7-2800-bf0-8014-9d-79b1-b58-7515-45a3.ngrok-free.app";
+    "https://cors-anywhere.herokuapp.com/https://ce8c-2800-bf0-8014-9d-1562-8c7a-13b7-809b.ngrok-free.app";
 
   const MAIN_TOKEN =
     "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJjcmVkZW50aWFsX2lkIjoiYThlNThhMzAtODRlZi00YjMyLWFkN2MtYzcwYWZjMDkyMzBkIiwiZXhwIjoxNjg3Mjc4ODM0LCJvcmlnX2lhdCI6MTY4NjY3NDAzNCwiaXNzIjoibG9jYWxob3N0LmNvbSJ9.PvcMMzzwihcP9Nny-3xM8uv-VUm5vmP7xHrI8HOkids";
@@ -125,6 +125,16 @@ function App() {
       type: "updateAttribute",
       value: "null",
     });
+    applyAttributeChange({
+      key: "lineupCardNumber",
+      type: "updateAttribute",
+      value: "null",
+    });
+    applyAttributeChange({
+      key: "lineupCardEmail",
+      type: "updateAttribute",
+      value: "null",
+    });
     // Apply the change to the metafield lineup number
     applyMetafieldsChange({
       type: "updateMetafield",
@@ -192,6 +202,12 @@ function App() {
       setCardAdded(true);
       temporalToken = data.token;
 
+      applyAttributeChange({
+        key: "lineupCardNumber",
+        type: "updateAttribute",
+        value: lineupCardNumber,
+      });
+
       // Apply the change to the metafield lineup number
       await applyMetafieldsChange({
         type: "updateMetafield",
@@ -257,6 +273,12 @@ function App() {
           value: saldo,
         });
 
+        await applyAttributeChange({
+          key: "lineupCardEmail",
+          type: "updateAttribute",
+          value: data.extra.email,
+        });
+
         //----------------------Timer----------------------//
 
         isTimerRunning = true;
@@ -274,12 +296,6 @@ function App() {
   }
 
   async function deleteToken() {
-    //Headers
-    var myHeaders = new Headers();
-    myHeaders.append("X-Requested-With", "");
-    myHeaders.append("Content-Type", "application/json");
-    myHeaders.append("Authorization", `Bearer ${token}`);
-
     //Body
     if (temporalToken) {
       var raw = JSON.stringify({
@@ -296,7 +312,11 @@ function App() {
     //options
     var requestOptions = {
       method: "POST",
-      headers: myHeaders,
+      headers: {
+        "X-Requested-With": "",
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${token}`,
+      },
       body: raw,
       redirect: "follow",
     };
@@ -327,12 +347,6 @@ function App() {
   }
 
   async function createToken() {
-    //Headers
-    var myHeaders = new Headers();
-    myHeaders.append("X-Requested-With", "");
-    myHeaders.append("Content-Type", "application/json");
-    myHeaders.append("Authorization", `Bearer ${token}`);
-
     //Body
     var raw = JSON.stringify({
       tarjeta: {
@@ -343,7 +357,11 @@ function App() {
     //options
     var requestOptions = {
       method: "POST",
-      headers: myHeaders,
+      headers: {
+        "X-Requested-With": "",
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${token}`,
+      },
       body: raw,
       redirect: "follow",
     };
@@ -357,22 +375,26 @@ function App() {
 
       // Si el status es 401, obtenemos un nuevo token y reintentamos la llamada
       if (response.status === 401) {
-        console.log("El token ha expirado, obteniendo uno nuevo...");
         const newToken = await getNewToken();
 
         // Actualizamos el token en las opciones de la solicitud
-        requestOptions.headers.set("Authorization", `Bearer ${newToken}`);
+        requestOptions.headers.Authorization = `Bearer ${newToken}`;
 
         // Intentamos la llamada nuevamente
-        const response = await fetch(
+        const response2 = await fetch(
           API_URL + "/api/cliente/crear-token-validacion/",
           requestOptions
         );
 
         // Si el status sigue siendo 401, lanzamos un error
-        if (response.status === 401) {
-          throw new Error("Error de autenticación después de renovar el token");
+        if (response2.status === 404 || response2.status === 400) {
+          return {
+            sent: false,
+          };
         }
+
+        const responseData2 = await response2.json();
+        return responseData2;
       }
 
       if (response.status === 404 || response.status === 400) {
@@ -391,12 +413,6 @@ function App() {
   }
 
   async function tokenCall() {
-    //Headers
-    var myHeaders = new Headers();
-    myHeaders.append("X-Requested-With", "");
-    myHeaders.append("Content-Type", "application/json");
-    myHeaders.append("Authorization", `Bearer ${token}`);
-
     //Body
     var raw = JSON.stringify({
       token: tokenText,
@@ -405,7 +421,11 @@ function App() {
     //options
     var requestOptions = {
       method: "POST",
-      headers: myHeaders,
+      headers: {
+        "X-Requested-With": "",
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${token}`,
+      },
       body: raw,
       redirect: "follow",
     };
@@ -500,11 +520,6 @@ function App() {
   }
 
   async function getNewToken() {
-    //Headers
-    var myHeaders = new Headers();
-    myHeaders.append("X-Requested-With", "");
-    myHeaders.append("Content-Type", "application/json");
-
     //Body
     var raw = JSON.stringify({
       api_key: API_KEY,
@@ -514,7 +529,10 @@ function App() {
     //options
     var requestOptions = {
       method: "POST",
-      headers: myHeaders,
+      headers: {
+        "X-Requested-With": "",
+        "Content-Type": "application/json",
+      },
       body: raw,
       redirect: "follow",
     };
@@ -528,11 +546,11 @@ function App() {
 
       // Si el status sigue siendo 401, lanzamos un error
       if (response.status === 401) {
-        throw new Error("Error de autenticación después de renovar el token");
+        throw new Error("Error de autenticación después de renovar el token 1");
       }
-      const new_token = response.json().token;
-      setToken(new_token);
-      return new_token;
+      const new_token = await response.json();
+      setToken(new_token.token);
+      return new_token.token;
     } catch (error) {
       // Manejo de errores de la llamada fetch
       console.error("Error en la llamada API:", error);
@@ -591,7 +609,11 @@ function App() {
                   error={tokenError}
                 />
                 <InlineLayout columns={["fill", "fill"]} spacing="base">
-                  <Button kind="secondary" onPress={resetCard}>
+                  <Button
+                    kind="secondary"
+                    disabled={isLoading ? true : false}
+                    onPress={resetCard}
+                  >
                     Cambiar de tarjeta
                   </Button>
                   <Button

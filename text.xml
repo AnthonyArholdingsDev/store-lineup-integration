@@ -1,0 +1,995 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<w:document xmlns:wpc="http://schemas.microsoft.com/office/word/2010/wordprocessingCanvas"
+    xmlns:cx="http://schemas.microsoft.com/office/drawing/2014/chartex"
+    xmlns:cx1="http://schemas.microsoft.com/office/drawing/2015/9/8/chartex"
+    xmlns:cx2="http://schemas.microsoft.com/office/drawing/2015/10/21/chartex"
+    xmlns:cx3="http://schemas.microsoft.com/office/drawing/2016/5/9/chartex"
+    xmlns:cx4="http://schemas.microsoft.com/office/drawing/2016/5/10/chartex"
+    xmlns:cx5="http://schemas.microsoft.com/office/drawing/2016/5/11/chartex"
+    xmlns:cx6="http://schemas.microsoft.com/office/drawing/2016/5/12/chartex"
+    xmlns:cx7="http://schemas.microsoft.com/office/drawing/2016/5/13/chartex"
+    xmlns:cx8="http://schemas.microsoft.com/office/drawing/2016/5/14/chartex"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:aink="http://schemas.microsoft.com/office/drawing/2016/ink"
+    xmlns:am3d="http://schemas.microsoft.com/office/drawing/2017/model3d"
+    xmlns:o="urn:schemas-microsoft-com:office:office"
+    xmlns:oel="http://schemas.microsoft.com/office/2019/extlst"
+    xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships"
+    xmlns:m="http://schemas.openxmlformats.org/officeDocument/2006/math"
+    xmlns:v="urn:schemas-microsoft-com:vml"
+    xmlns:wp14="http://schemas.microsoft.com/office/word/2010/wordprocessingDrawing"
+    xmlns:wp="http://schemas.openxmlformats.org/drawingml/2006/wordprocessingDrawing"
+    xmlns:w10="urn:schemas-microsoft-com:office:word"
+    xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main"
+    xmlns:w14="http://schemas.microsoft.com/office/word/2010/wordml"
+    xmlns:w15="http://schemas.microsoft.com/office/word/2012/wordml"
+    xmlns:w16cex="http://schemas.microsoft.com/office/word/2018/wordml/cex"
+    xmlns:w16cid="http://schemas.microsoft.com/office/word/2016/wordml/cid"
+    xmlns:w16="http://schemas.microsoft.com/office/word/2018/wordml"
+    xmlns:w16du="http://schemas.microsoft.com/office/word/2023/wordml/word16du"
+    xmlns:w16sdtdh="http://schemas.microsoft.com/office/word/2020/wordml/sdtdatahash"
+    xmlns:w16se="http://schemas.microsoft.com/office/word/2015/wordml/symex"
+    xmlns:wpg="http://schemas.microsoft.com/office/word/2010/wordprocessingGroup"
+    xmlns:wpi="http://schemas.microsoft.com/office/word/2010/wordprocessingInk"
+    xmlns:wne="http://schemas.microsoft.com/office/word/2006/wordml"
+    xmlns:wps="http://schemas.microsoft.com/office/word/2010/wordprocessingShape"
+    mc:Ignorable="w14 w15 w16se w16cid w16 w16cex w16sdtdh wp14">
+    <w:body>
+        <w:p w14:paraId="2828617F" w14:textId="24EEAE1B" w:rsidR="00705A35" w:rsidRPr="00E743B5"
+            w:rsidRDefault="00705A35" w:rsidP="001028AA">
+            <w:pPr>
+                <w:tabs>
+                    <w:tab w:val="left" w:pos="3895" />
+                </w:tabs>
+                <w:jc w:val="both" />
+            </w:pPr>
+            <w:r w:rsidRPr="00E743B5">
+                <w:rPr>
+                    <w:noProof />
+                </w:rPr>
+                <mc:AlternateContent>
+                    <mc:Choice Requires="wps">
+                        <w:drawing>
+                            <wp:anchor distT="0" distB="0" distL="114300" distR="114300"
+                                simplePos="0" relativeHeight="251659264" behindDoc="0" locked="0"
+                                layoutInCell="1" allowOverlap="1" wp14:anchorId="757DDA5A"
+                                wp14:editId="5A6E5B6A">
+                                <wp:simplePos x="0" y="0" />
+                                <wp:positionH relativeFrom="margin">
+                                    <wp:align>left</wp:align>
+                                </wp:positionH>
+                                <wp:positionV relativeFrom="paragraph">
+                                    <wp:posOffset>7735</wp:posOffset>
+                                </wp:positionV>
+                                <wp:extent cx="5763491" cy="0" />
+                                <wp:effectExtent l="0" t="19050" r="46990" b="38100" />
+                                <wp:wrapNone />
+                                <wp:docPr id="121510614" name="Straight Connector 1" />
+                                <wp:cNvGraphicFramePr />
+                                <a:graphic
+                                    xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main">
+                                    <a:graphicData
+                                        uri="http://schemas.microsoft.com/office/word/2010/wordprocessingShape">
+                                        <wps:wsp>
+                                            <wps:cNvCnPr />
+                                            <wps:spPr>
+                                                <a:xfrm flipV="1">
+                                                    <a:off x="0" y="0" />
+                                                    <a:ext cx="5763491" cy="0" />
+                                                </a:xfrm>
+                                                <a:prstGeom prst="line">
+                                                    <a:avLst />
+                                                </a:prstGeom>
+                                                <a:ln w="57150" />
+                                            </wps:spPr>
+                                            <wps:style>
+                                                <a:lnRef idx="3">
+                                                    <a:schemeClr val="dk1" />
+                                                </a:lnRef>
+                                                <a:fillRef idx="0">
+                                                    <a:schemeClr val="dk1" />
+                                                </a:fillRef>
+                                                <a:effectRef idx="2">
+                                                    <a:schemeClr val="dk1" />
+                                                </a:effectRef>
+                                                <a:fontRef idx="minor">
+                                                    <a:schemeClr val="tx1" />
+                                                </a:fontRef>
+                                            </wps:style>
+                                            <wps:bodyPr />
+                                        </wps:wsp>
+                                    </a:graphicData>
+                                </a:graphic>
+                                <wp14:sizeRelH relativeFrom="margin">
+                                    <wp14:pctWidth>0</wp14:pctWidth>
+                                </wp14:sizeRelH>
+                                <wp14:sizeRelV relativeFrom="margin">
+                                    <wp14:pctHeight>0</wp14:pctHeight>
+                                </wp14:sizeRelV>
+                            </wp:anchor>
+                        </w:drawing>
+                    </mc:Choice>
+                    <mc:Fallback>
+                        <w:pict>
+                            <v:line w14:anchorId="2F97EC0B" id="Straight Connector 1"
+                                o:spid="_x0000_s1026"
+                                style="position:absolute;flip:y;z-index:251659264;visibility:visible;mso-wrap-style:square;mso-width-percent:0;mso-height-percent:0;mso-wrap-distance-left:9pt;mso-wrap-distance-top:0;mso-wrap-distance-right:9pt;mso-wrap-distance-bottom:0;mso-position-horizontal:left;mso-position-horizontal-relative:margin;mso-position-vertical:absolute;mso-position-vertical-relative:text;mso-width-percent:0;mso-height-percent:0;mso-width-relative:margin;mso-height-relative:margin"
+                                from="0,.6pt" to="453.8pt,.6pt"
+                                o:gfxdata="UEsDBBQABgAIAAAAIQC2gziS/gAAAOEBAAATAAAAW0NvbnRlbnRfVHlwZXNdLnhtbJSRQU7DMBBF&#xA;90jcwfIWJU67QAgl6YK0S0CoHGBkTxKLZGx5TGhvj5O2G0SRWNoz/78nu9wcxkFMGNg6quQqL6RA&#xA;0s5Y6ir5vt9lD1JwBDIwOMJKHpHlpr69KfdHjyxSmriSfYz+USnWPY7AufNIadK6MEJMx9ApD/oD&#xA;OlTrorhX2lFEilmcO2RdNtjC5xDF9pCuTyYBB5bi6bQ4syoJ3g9WQ0ymaiLzg5KdCXlKLjvcW893&#xA;SUOqXwnz5DrgnHtJTxOsQfEKIT7DmDSUCaxw7Rqn8787ZsmRM9e2VmPeBN4uqYvTtW7jvijg9N/y&#xA;JsXecLq0q+WD6m8AAAD//wMAUEsDBBQABgAIAAAAIQA4/SH/1gAAAJQBAAALAAAAX3JlbHMvLnJl&#xA;bHOkkMFqwzAMhu+DvYPRfXGawxijTi+j0GvpHsDYimMaW0Yy2fr2M4PBMnrbUb/Q94l/f/hMi1qR&#xA;JVI2sOt6UJgd+ZiDgffL8ekFlFSbvV0oo4EbChzGx4f9GRdb25HMsYhqlCwG5lrLq9biZkxWOiqY&#xA;22YiTra2kYMu1l1tQD30/bPm3wwYN0x18gb45AdQl1tp5j/sFB2T0FQ7R0nTNEV3j6o9feQzro1i&#xA;OWA14Fm+Q8a1a8+Bvu/d/dMb2JY5uiPbhG/ktn4cqGU/er3pcvwCAAD//wMAUEsDBBQABgAIAAAA&#xA;IQAUOP+FrAEAAKMDAAAOAAAAZHJzL2Uyb0RvYy54bWysU01v1DAQvSPxHyzfWSdbWiDabA+t4IKg&#xA;osDddcYbC3/JNpvsv2c8u5tWgHpAXCzHM+/NezOTzfXsLNtDyib4nrerhjPwKgzG73r+7ev7V285&#xA;y0X6QdrgoecHyPx6+/LFZoodrMMY7ACJIYnP3RR7PpYSOyGyGsHJvAoRPAZ1SE4W/Ew7MSQ5Ibuz&#xA;Yt00V2IKaYgpKMgZX2+PQb4lfq1Blc9aZyjM9hy1FToTnQ/1FNuN7HZJxtGokwz5DyqcNB6LLlS3&#xA;skj2M5k/qJxRKeSgy0oFJ4LWRgF5QDdt85ub+1FGIC/YnByXNuX/R6s+7W/8XcI2TDF3Od6l6mLW&#xA;yTFtTfyOMyVfqJTN1LbD0jaYC1P4ePnm6uL1u5YzdY6JI0WliimXDxAcq5eeW+OrI9nJ/cdcsCym&#xA;nlPqs/VsqoztJc1GPKqiWzlYOKZ9Ac3MgNUviI4WBm5sYnuJox5+tHW0SG49ZlaINtYuoOZ50Cm3&#xA;woCWaAGunwcu2VQx+LIAnfEh/Q1c5rNUfcxH2U+81utDGA40IwrgJpCz09bWVXv6TfDHf2v7CwAA&#xA;//8DAFBLAwQUAAYACAAAACEA4qUcmNkAAAAEAQAADwAAAGRycy9kb3ducmV2LnhtbEyPwU7DMBBE&#xA;70j8g7VI3KhNESkNcSqEQBwjGiR6dOMlCdjrELtp+HsWLnCcndXMm2IzeycmHGMfSMPlQoFAaoLt&#xA;qdXwUj9e3ICIyZA1LhBq+MIIm/L0pDC5DUd6xmmbWsEhFHOjoUtpyKWMTYfexEUYkNh7C6M3ieXY&#xA;SjuaI4d7J5dKZdKbnrihMwPed9h8bA9ew0pV2aeaVFvv6oen6v26cq9Xk9bnZ/PdLYiEc/p7hh98&#xA;RoeSmfbhQDYKp4GHJL4uQbC5VqsMxP5Xy7KQ/+HLbwAAAP//AwBQSwECLQAUAAYACAAAACEAtoM4&#xA;kv4AAADhAQAAEwAAAAAAAAAAAAAAAAAAAAAAW0NvbnRlbnRfVHlwZXNdLnhtbFBLAQItABQABgAI&#xA;AAAAIQA4/SH/1gAAAJQBAAALAAAAAAAAAAAAAAAAAC8BAABfcmVscy8ucmVsc1BLAQItABQABgAI&#xA;AAAAIQAUOP+FrAEAAKMDAAAOAAAAAAAAAAAAAAAAAC4CAABkcnMvZTJvRG9jLnhtbFBLAQItABQA&#xA;BgAIAAAAIQDipRyY2QAAAAQBAAAPAAAAAAAAAAAAAAAAAAYEAABkcnMvZG93bnJldi54bWxQSwUG&#xA;AAAAAAQABADzAAAADAUAAAAA&#xA;"
+                                strokecolor="black [3200]" strokeweight="4.5pt">
+                                <v:stroke joinstyle="miter" />
+                                <w10:wrap anchorx="margin" />
+                            </v:line>
+                        </w:pict>
+                    </mc:Fallback>
+                </mc:AlternateContent>
+            </w:r>
+            <w:r w:rsidRPr="00E743B5">
+                <w:tab />
+            </w:r>
+        </w:p>
+        <w:p w14:paraId="24196261" w14:textId="77777777" w:rsidR="00AE6747" w:rsidRPr="00E743B5"
+            w:rsidRDefault="00AE6747" w:rsidP="001028AA">
+            <w:pPr>
+                <w:jc w:val="both" />
+                <w:rPr>
+                    <w:b />
+                    <w:bCs />
+                    <w:lang w:val="es-EC" />
+                </w:rPr>
+            </w:pPr>
+            <w:r w:rsidRPr="00E743B5">
+                <w:rPr>
+                    <w:b />
+                    <w:bCs />
+                    <w:lang w:val="es-EC" />
+                </w:rPr>
+                <w:t>Retiro de Mercadería en Centro de Distribución</w:t>
+            </w:r>
+        </w:p>
+        <w:p w14:paraId="28768D8F" w14:textId="1F7D46FF" w:rsidR="00AE6747" w:rsidRPr="00E743B5"
+            w:rsidRDefault="00AE6747" w:rsidP="001028AA">
+            <w:pPr>
+                <w:jc w:val="both" />
+                <w:rPr>
+                    <w:b />
+                    <w:bCs />
+                    <w:lang w:val="es-EC" />
+                </w:rPr>
+            </w:pPr>
+            <w:r w:rsidRPr="00E743B5">
+                <w:rPr>
+                    <w:lang w:val="es-EC" />
+                </w:rPr>
+                <w:t xml:space="preserve">• Entiendo que es mi responsabilidad traer un vehículo apropiado para recoger mercadería en el Centro de Distribución y que </w:t>
+            </w:r>
+            <w:proofErr w:type="spellStart" />
+            <w:r w:rsidRPr="00E743B5">
+                <w:rPr>
+                    <w:lang w:val="es-EC" />
+                </w:rPr>
+                <w:t>Crate</w:t>
+            </w:r>
+            <w:proofErr w:type="spellEnd" />
+            <w:r w:rsidRPr="00E743B5">
+                <w:rPr>
+                    <w:lang w:val="es-EC" />
+                </w:rPr>
+                <w:t xml:space="preserve"> and </w:t>
+            </w:r>
+            <w:proofErr w:type="spellStart" />
+            <w:r w:rsidRPr="00E743B5">
+                <w:rPr>
+                    <w:lang w:val="es-EC" />
+                </w:rPr>
+                <w:t>Barrel</w:t>
+            </w:r>
+            <w:proofErr w:type="spellEnd" />
+            <w:r w:rsidRPr="00E743B5">
+                <w:rPr>
+                    <w:lang w:val="es-EC" />
+                </w:rPr>
+                <w:t xml:space="preserve"> Costa Rica no es responsable de ningún daño al vehículo utilizado para el retiro de mercancías.</w:t>
+            </w:r>
+        </w:p>
+        <w:p w14:paraId="67216609" w14:textId="309693DE" w:rsidR="00AE6747" w:rsidRPr="00E743B5"
+            w:rsidRDefault="00AE6747" w:rsidP="001028AA">
+            <w:pPr>
+                <w:jc w:val="both" />
+                <w:rPr>
+                    <w:lang w:val="es-EC" />
+                </w:rPr>
+            </w:pPr>
+            <w:r w:rsidRPr="00E743B5">
+                <w:rPr>
+                    <w:lang w:val="es-EC" />
+                </w:rPr>
+                <w:t>• Asumo todos los riesgos relacionados con el transporte de la mercadería.</w:t>
+            </w:r>
+        </w:p>
+        <w:p w14:paraId="4BBC2282" w14:textId="4D23EB7A" w:rsidR="00AE6747" w:rsidRPr="00E743B5"
+            w:rsidRDefault="00AE6747" w:rsidP="001028AA">
+            <w:pPr>
+                <w:jc w:val="both" />
+                <w:rPr>
+                    <w:lang w:val="es-EC" />
+                </w:rPr>
+            </w:pPr>
+            <w:r w:rsidRPr="00E743B5">
+                <w:rPr>
+                    <w:lang w:val="es-EC" />
+                </w:rPr>
+                <w:t xml:space="preserve">• Libero de cualquier responsabilidad a </w:t>
+            </w:r>
+            <w:proofErr w:type="spellStart" />
+            <w:r w:rsidRPr="00E743B5">
+                <w:rPr>
+                    <w:lang w:val="es-EC" />
+                </w:rPr>
+                <w:t>Crate</w:t>
+            </w:r>
+            <w:proofErr w:type="spellEnd" />
+            <w:r w:rsidRPr="00E743B5">
+                <w:rPr>
+                    <w:lang w:val="es-EC" />
+                </w:rPr>
+                <w:t xml:space="preserve"> and </w:t>
+            </w:r>
+            <w:proofErr w:type="spellStart" />
+            <w:r w:rsidRPr="00E743B5">
+                <w:rPr>
+                    <w:lang w:val="es-EC" />
+                </w:rPr>
+                <w:t>Barrel</w:t>
+            </w:r>
+            <w:proofErr w:type="spellEnd" />
+            <w:r w:rsidRPr="00E743B5">
+                <w:rPr>
+                    <w:lang w:val="es-EC" />
+                </w:rPr>
+                <w:t xml:space="preserve"> Costa Rica y a sus empleados contra cualquier reclamo que surja como resultado o se relacione de alguna manera con mi decisión transportar por mis propios medios la mercadería.</w:t>
+            </w:r>
+        </w:p>
+        <w:p w14:paraId="0B84B729" w14:textId="0C597984" w:rsidR="00AE6747" w:rsidRPr="00E743B5"
+            w:rsidRDefault="00AE6747" w:rsidP="001028AA">
+            <w:pPr>
+                <w:jc w:val="both" />
+                <w:rPr>
+                    <w:lang w:val="es-EC" />
+                </w:rPr>
+            </w:pPr>
+            <w:r w:rsidRPr="00E743B5">
+                <w:rPr>
+                    <w:lang w:val="es-EC" />
+                </w:rPr>
+                <w:t xml:space="preserve">• Entiendo que </w:t>
+            </w:r>
+            <w:proofErr w:type="spellStart" />
+            <w:r w:rsidRPr="00E743B5">
+                <w:rPr>
+                    <w:lang w:val="es-EC" />
+                </w:rPr>
+                <w:t>Crate</w:t>
+            </w:r>
+            <w:proofErr w:type="spellEnd" />
+            <w:r w:rsidRPr="00E743B5">
+                <w:rPr>
+                    <w:lang w:val="es-EC" />
+                </w:rPr>
+                <w:t xml:space="preserve"> and </w:t>
+            </w:r>
+            <w:proofErr w:type="spellStart" />
+            <w:r w:rsidRPr="00E743B5">
+                <w:rPr>
+                    <w:lang w:val="es-EC" />
+                </w:rPr>
+                <w:t>Barrel</w:t>
+            </w:r>
+            <w:proofErr w:type="spellEnd" />
+            <w:r w:rsidRPr="00E743B5">
+                <w:rPr>
+                    <w:lang w:val="es-EC" />
+                </w:rPr>
+                <w:t xml:space="preserve"> Costa Rica se reserva el derecho de rechazar la asistencia en el proceso de carga, si en su opinión, este proceso no es seguro o puede dar lugar a daños a la mercadería o al vehículo.</w:t>
+            </w:r>
+        </w:p>
+        <w:p w14:paraId="7D7362E1" w14:textId="507055BE" w:rsidR="00AE6747" w:rsidRPr="00E743B5"
+            w:rsidRDefault="00AE6747" w:rsidP="001028AA">
+            <w:pPr>
+                <w:jc w:val="both" />
+                <w:rPr>
+                    <w:lang w:val="es-EC" />
+                </w:rPr>
+            </w:pPr>
+            <w:r w:rsidRPr="00E743B5">
+                <w:rPr>
+                    <w:lang w:val="es-EC" />
+                </w:rPr>
+                <w:t xml:space="preserve">• Es de mi conocimiento que el producto retirado por el cliente y no ensamblado por el personal de </w:t>
+            </w:r>
+            <w:proofErr w:type="spellStart" />
+            <w:r w:rsidRPr="00E743B5">
+                <w:rPr>
+                    <w:lang w:val="es-EC" />
+                </w:rPr>
+                <w:t>Crate</w:t>
+            </w:r>
+            <w:proofErr w:type="spellEnd" />
+            <w:r w:rsidRPr="00E743B5">
+                <w:rPr>
+                    <w:lang w:val="es-EC" />
+                </w:rPr>
+                <w:t xml:space="preserve"> and </w:t>
+            </w:r>
+            <w:proofErr w:type="spellStart" />
+            <w:r w:rsidRPr="00E743B5">
+                <w:rPr>
+                    <w:lang w:val="es-EC" />
+                </w:rPr>
+                <w:t>Barrel</w:t>
+            </w:r>
+            <w:proofErr w:type="spellEnd" />
+            <w:r w:rsidRPr="00E743B5">
+                <w:rPr>
+                    <w:lang w:val="es-EC" />
+                </w:rPr>
+                <w:t xml:space="preserve"> Costa Rica en el Centro de Distribución pierde su garantía.</w:t>
+            </w:r>
+        </w:p>
+        <w:p w14:paraId="5E9D0C3A" w14:textId="39D25F02" w:rsidR="00AE6747" w:rsidRPr="00E743B5"
+            w:rsidRDefault="00AE6747" w:rsidP="001028AA">
+            <w:pPr>
+                <w:jc w:val="both" />
+                <w:rPr>
+                    <w:lang w:val="es-EC" />
+                </w:rPr>
+            </w:pPr>
+            <w:r w:rsidRPr="00E743B5">
+                <w:rPr>
+                    <w:lang w:val="es-EC" />
+                </w:rPr>
+                <w:t>• He inspeccionado cuidadosamente el producto a retirar y</w:t>
+            </w:r>
+            <w:r w:rsidR="004725F7">
+                <w:rPr>
+                    <w:lang w:val="es-EC" />
+                </w:rPr>
+                <w:t xml:space="preserve"> </w:t>
+            </w:r>
+            <w:r w:rsidRPr="00E743B5">
+                <w:rPr>
+                    <w:lang w:val="es-EC" />
+                </w:rPr>
+                <w:t>lo acepto en buenas condiciones.</w:t>
+            </w:r>
+        </w:p>
+        <w:tbl>
+            <w:tblPr>
+                <w:tblStyle w:val="TableGrid" />
+                <w:tblpPr w:leftFromText="180" w:rightFromText="180" w:vertAnchor="text"
+                    w:horzAnchor="margin" w:tblpY="444" />
+                <w:tblW w:w="0" w:type="auto" />
+                <w:tblLook w:val="04A0" w:firstRow="1" w:lastRow="0" w:firstColumn="1"
+                    w:lastColumn="0" w:noHBand="0" w:noVBand="1" />
+            </w:tblPr>
+            <w:tblGrid>
+                <w:gridCol w:w="4396" />
+                <w:gridCol w:w="4396" />
+            </w:tblGrid>
+            <w:tr w:rsidR="001028AA" w:rsidRPr="004725F7" w14:paraId="11BAD08F"
+                w14:textId="77777777" w:rsidTr="00E743B5">
+                <w:trPr>
+                    <w:trHeight w:val="645" />
+                </w:trPr>
+                <w:tc>
+                    <w:tcPr>
+                        <w:tcW w:w="4396" w:type="dxa" />
+                    </w:tcPr>
+                    <w:p w14:paraId="38E60570" w14:textId="1434D241" w:rsidR="001028AA"
+                        w:rsidRPr="00E743B5" w:rsidRDefault="001028AA" w:rsidP="00E743B5">
+                        <w:pPr>
+                            <w:spacing w:after="160" w:line="259" w:lineRule="auto" />
+                            <w:rPr>
+                                <w:lang w:val="es-EC" />
+                            </w:rPr>
+                        </w:pPr>
+                        <w:r w:rsidRPr="00E743B5">
+                            <w:rPr>
+                                <w:lang w:val="es-EC" />
+                            </w:rPr>
+                            <w:t>Nombre Completo:</w:t>
+                        </w:r>
+                        <w:r w:rsidR="00E743B5" w:rsidRPr="00E743B5">
+                            <w:rPr>
+                                <w:lang w:val="es-EC" />
+                            </w:rPr>
+                            <w:br />
+                        </w:r>
+                        <w:sdt>
+                            <w:sdtPr>
+                                <w:rPr>
+                                    <w:lang w:val="es-EC" />
+                                </w:rPr>
+                                <w:alias w:val="nombre_cliente" />
+                                <w:tag w:val="nombre_cliente" />
+                                <w:id w:val="100234752" />
+                                <w:placeholder>
+                                    <w:docPart w:val="E7E6BBF022994047BAC45A0979BF0703" />
+                                </w:placeholder>
+                                <w:showingPlcHdr />
+                                <w:dataBinding
+                                    w:prefixMappings="xmlns:ns0='http://schemas.microsoft.com/office/2006/metadata/properties' xmlns:ns1='http://www.w3.org/2001/XMLSchema-instance' xmlns:ns2='http://schemas.microsoft.com/office/infopath/2007/PartnerControls' xmlns:ns3='6f95e4a7-29d7-4031-82bc-e6f47fff4d41' "
+                                    w:xpath="/ns0:properties[1]/documentManagement[1]/ns3:nombre_cliente[1]"
+                                    w:storeItemID="{552029F1-EE44-4CF4-B3BB-5D1EBFAEF13D}" />
+                                <w:text />
+                            </w:sdtPr>
+                            <w:sdtContent>
+                                <w:r w:rsidR="006B723C" w:rsidRPr="00E743B5">
+                                    <w:rPr>
+                                        <w:rStyle w:val="PlaceholderText" />
+                                    </w:rPr>
+                                    <w:t>[nombre_cliente]</w:t>
+                                </w:r>
+                            </w:sdtContent>
+                        </w:sdt>
+                    </w:p>
+                </w:tc>
+                <w:tc>
+                    <w:tcPr>
+                        <w:tcW w:w="4396" w:type="dxa" />
+                    </w:tcPr>
+                    <w:p w14:paraId="6B6B62D1" w14:textId="530FC10D" w:rsidR="001028AA"
+                        w:rsidRPr="00E743B5" w:rsidRDefault="001028AA" w:rsidP="00E743B5">
+                        <w:pPr>
+                            <w:spacing w:after="160" w:line="259" w:lineRule="auto" />
+                            <w:rPr>
+                                <w:lang w:val="es-EC" />
+                            </w:rPr>
+                        </w:pPr>
+                        <w:r w:rsidRPr="00E743B5">
+                            <w:rPr>
+                                <w:lang w:val="es-EC" />
+                            </w:rPr>
+                            <w:t>Número de Cédula:</w:t>
+                        </w:r>
+                        <w:r w:rsidR="00E743B5" w:rsidRPr="00E743B5">
+                            <w:rPr>
+                                <w:lang w:val="es-EC" />
+                            </w:rPr>
+                            <w:br />
+                        </w:r>
+                        <w:sdt>
+                            <w:sdtPr>
+                                <w:rPr>
+                                    <w:lang w:val="es-EC" />
+                                </w:rPr>
+                                <w:alias w:val="ci_cliente" />
+                                <w:tag w:val="ci_cliente" />
+                                <w:id w:val="1628971881" />
+                                <w:placeholder>
+                                    <w:docPart w:val="B8F0D42FAEFF4839936544061CAE38BD" />
+                                </w:placeholder>
+                                <w:showingPlcHdr />
+                                <w:dataBinding
+                                    w:prefixMappings="xmlns:ns0='http://schemas.microsoft.com/office/2006/metadata/properties' xmlns:ns1='http://www.w3.org/2001/XMLSchema-instance' xmlns:ns2='http://schemas.microsoft.com/office/infopath/2007/PartnerControls' xmlns:ns3='6f95e4a7-29d7-4031-82bc-e6f47fff4d41' "
+                                    w:xpath="/ns0:properties[1]/documentManagement[1]/ns3:ci_cliente[1]"
+                                    w:storeItemID="{552029F1-EE44-4CF4-B3BB-5D1EBFAEF13D}" />
+                                <w:text />
+                            </w:sdtPr>
+                            <w:sdtContent>
+                                <w:r w:rsidR="006B723C" w:rsidRPr="00E743B5">
+                                    <w:rPr>
+                                        <w:rStyle w:val="PlaceholderText" />
+                                        <w:lang w:val="es-EC" />
+                                    </w:rPr>
+                                    <w:t>[ci_cliente]</w:t>
+                                </w:r>
+                            </w:sdtContent>
+                        </w:sdt>
+                    </w:p>
+                </w:tc>
+            </w:tr>
+            <w:tr w:rsidR="001028AA" w:rsidRPr="00E743B5" w14:paraId="1313BF85"
+                w14:textId="77777777" w:rsidTr="00E743B5">
+                <w:trPr>
+                    <w:trHeight w:val="635" />
+                </w:trPr>
+                <w:tc>
+                    <w:tcPr>
+                        <w:tcW w:w="4396" w:type="dxa" />
+                    </w:tcPr>
+                    <w:p w14:paraId="46DFAF54" w14:textId="79F9673B" w:rsidR="001028AA"
+                        w:rsidRPr="00E743B5" w:rsidRDefault="001028AA" w:rsidP="00E743B5">
+                        <w:pPr>
+                            <w:spacing w:after="160" w:line="259" w:lineRule="auto" />
+                            <w:rPr>
+                                <w:lang w:val="es-EC" />
+                            </w:rPr>
+                        </w:pPr>
+                        <w:r w:rsidRPr="00E743B5">
+                            <w:rPr>
+                                <w:lang w:val="es-EC" />
+                            </w:rPr>
+                            <w:t>Teléfono:</w:t>
+                        </w:r>
+                        <w:r w:rsidR="00E743B5" w:rsidRPr="00E743B5">
+                            <w:rPr>
+                                <w:lang w:val="es-EC" />
+                            </w:rPr>
+                            <w:br />
+                        </w:r>
+                        <w:sdt>
+                            <w:sdtPr>
+                                <w:rPr>
+                                    <w:lang w:val="es-EC" />
+                                </w:rPr>
+                                <w:alias w:val="telefono_cliente" />
+                                <w:tag w:val="telefono_cliente" />
+                                <w:id w:val="538252487" />
+                                <w:placeholder>
+                                    <w:docPart w:val="F2D412453F334AEB9EC3AC3870BCE23A" />
+                                </w:placeholder>
+                                <w:showingPlcHdr />
+                                <w:dataBinding
+                                    w:prefixMappings="xmlns:ns0='http://schemas.microsoft.com/office/2006/metadata/properties' xmlns:ns1='http://www.w3.org/2001/XMLSchema-instance' xmlns:ns2='http://schemas.microsoft.com/office/infopath/2007/PartnerControls' xmlns:ns3='6f95e4a7-29d7-4031-82bc-e6f47fff4d41' "
+                                    w:xpath="/ns0:properties[1]/documentManagement[1]/ns3:telefono_cliente[1]"
+                                    w:storeItemID="{552029F1-EE44-4CF4-B3BB-5D1EBFAEF13D}" />
+                                <w:text />
+                            </w:sdtPr>
+                            <w:sdtContent>
+                                <w:r w:rsidR="006B723C" w:rsidRPr="00E743B5">
+                                    <w:rPr>
+                                        <w:rStyle w:val="PlaceholderText" />
+                                    </w:rPr>
+                                    <w:t>[telefono_cliente]</w:t>
+                                </w:r>
+                            </w:sdtContent>
+                        </w:sdt>
+                    </w:p>
+                </w:tc>
+                <w:tc>
+                    <w:tcPr>
+                        <w:tcW w:w="4396" w:type="dxa" />
+                    </w:tcPr>
+                    <w:p w14:paraId="0E55F7E5" w14:textId="6E206171" w:rsidR="001028AA"
+                        w:rsidRPr="00E743B5" w:rsidRDefault="001028AA" w:rsidP="00E743B5">
+                        <w:pPr>
+                            <w:spacing w:after="160" w:line="259" w:lineRule="auto" />
+                            <w:rPr>
+                                <w:lang w:val="es-EC" />
+                            </w:rPr>
+                        </w:pPr>
+                        <w:r w:rsidRPr="00E743B5">
+                            <w:rPr>
+                                <w:lang w:val="es-EC" />
+                            </w:rPr>
+                            <w:t>Correo electrónico:</w:t>
+                        </w:r>
+                        <w:r w:rsidR="00E743B5" w:rsidRPr="00E743B5">
+                            <w:rPr>
+                                <w:lang w:val="es-EC" />
+                            </w:rPr>
+                            <w:br />
+                        </w:r>
+                        <w:sdt>
+                            <w:sdtPr>
+                                <w:rPr>
+                                    <w:lang w:val="es-EC" />
+                                </w:rPr>
+                                <w:alias w:val="correo_cliente" />
+                                <w:tag w:val="correo_cliente" />
+                                <w:id w:val="-2061545863" />
+                                <w:placeholder>
+                                    <w:docPart w:val="C982A956A2634066A012F114EC2B868F" />
+                                </w:placeholder>
+                                <w:showingPlcHdr />
+                                <w:dataBinding
+                                    w:prefixMappings="xmlns:ns0='http://schemas.microsoft.com/office/2006/metadata/properties' xmlns:ns1='http://www.w3.org/2001/XMLSchema-instance' xmlns:ns2='http://schemas.microsoft.com/office/infopath/2007/PartnerControls' xmlns:ns3='6f95e4a7-29d7-4031-82bc-e6f47fff4d41' "
+                                    w:xpath="/ns0:properties[1]/documentManagement[1]/ns3:correo_cliente[1]"
+                                    w:storeItemID="{552029F1-EE44-4CF4-B3BB-5D1EBFAEF13D}" />
+                                <w:text />
+                            </w:sdtPr>
+                            <w:sdtContent>
+                                <w:r w:rsidR="006B723C" w:rsidRPr="00E743B5">
+                                    <w:rPr>
+                                        <w:rStyle w:val="PlaceholderText" />
+                                    </w:rPr>
+                                    <w:t>[correo_cliente]</w:t>
+                                </w:r>
+                            </w:sdtContent>
+                        </w:sdt>
+                    </w:p>
+                </w:tc>
+            </w:tr>
+            <w:tr w:rsidR="001028AA" w:rsidRPr="00E743B5" w14:paraId="1AA5F19D"
+                w14:textId="77777777" w:rsidTr="00E743B5">
+                <w:trPr>
+                    <w:trHeight w:val="645" />
+                </w:trPr>
+                <w:tc>
+                    <w:tcPr>
+                        <w:tcW w:w="4396" w:type="dxa" />
+                    </w:tcPr>
+                    <w:p w14:paraId="77A7150C" w14:textId="20A83755" w:rsidR="001028AA"
+                        w:rsidRPr="00E743B5" w:rsidRDefault="001028AA" w:rsidP="00E743B5">
+                        <w:pPr>
+                            <w:spacing w:after="160" w:line="259" w:lineRule="auto" />
+                            <w:rPr>
+                                <w:lang w:val="es-EC" />
+                            </w:rPr>
+                        </w:pPr>
+                        <w:r w:rsidRPr="00E743B5">
+                            <w:rPr>
+                                <w:lang w:val="es-EC" />
+                            </w:rPr>
+                            <w:t>Fecha:</w:t>
+                        </w:r>
+                        <w:r w:rsidR="00E743B5" w:rsidRPr="00E743B5">
+                            <w:rPr>
+                                <w:lang w:val="es-EC" />
+                            </w:rPr>
+                            <w:br />
+                        </w:r>
+                        <w:sdt>
+                            <w:sdtPr>
+                                <w:rPr>
+                                    <w:lang w:val="es-EC" />
+                                </w:rPr>
+                                <w:alias w:val="fecha_2" />
+                                <w:tag w:val="fecha_2" />
+                                <w:id w:val="1595051667" />
+                                <w:placeholder>
+                                    <w:docPart w:val="6FEF04DCF43846E4837AA69FF6E1E426" />
+                                </w:placeholder>
+                                <w:showingPlcHdr />
+                                <w:dataBinding
+                                    w:prefixMappings="xmlns:ns0='http://schemas.microsoft.com/office/2006/metadata/properties' xmlns:ns1='http://www.w3.org/2001/XMLSchema-instance' xmlns:ns2='http://schemas.microsoft.com/office/infopath/2007/PartnerControls' xmlns:ns3='6f95e4a7-29d7-4031-82bc-e6f47fff4d41' "
+                                    w:xpath="/ns0:properties[1]/documentManagement[1]/ns3:fecha_2[1]"
+                                    w:storeItemID="{552029F1-EE44-4CF4-B3BB-5D1EBFAEF13D}" />
+                                <w:date>
+                                    <w:dateFormat w:val="M/d/yyyy" />
+                                    <w:lid w:val="en-US" />
+                                    <w:storeMappedDataAs w:val="dateTime" />
+                                    <w:calendar w:val="gregorian" />
+                                </w:date>
+                            </w:sdtPr>
+                            <w:sdtContent>
+                                <w:r w:rsidR="006B723C" w:rsidRPr="00E743B5">
+                                    <w:rPr>
+                                        <w:rStyle w:val="PlaceholderText" />
+                                    </w:rPr>
+                                    <w:t>[fecha_2]</w:t>
+                                </w:r>
+                            </w:sdtContent>
+                        </w:sdt>
+                    </w:p>
+                </w:tc>
+                <w:tc>
+                    <w:tcPr>
+                        <w:tcW w:w="4396" w:type="dxa" />
+                    </w:tcPr>
+                    <w:p w14:paraId="5FDF755A" w14:textId="2CC259DC" w:rsidR="001028AA"
+                        w:rsidRPr="00E743B5" w:rsidRDefault="001028AA" w:rsidP="00E743B5">
+                        <w:pPr>
+                            <w:spacing w:after="160" w:line="259" w:lineRule="auto" />
+                            <w:rPr>
+                                <w:lang w:val="es-EC" />
+                            </w:rPr>
+                        </w:pPr>
+                        <w:r w:rsidRPr="00E743B5">
+                            <w:rPr>
+                                <w:lang w:val="es-EC" />
+                            </w:rPr>
+                            <w:t>Asesor:</w:t>
+                        </w:r>
+                        <w:r w:rsidR="00E743B5" w:rsidRPr="00E743B5">
+                            <w:rPr>
+                                <w:lang w:val="es-EC" />
+                            </w:rPr>
+                            <w:br />
+                        </w:r>
+                        <w:sdt>
+                            <w:sdtPr>
+                                <w:rPr>
+                                    <w:lang w:val="es-EC" />
+                                </w:rPr>
+                                <w:alias w:val="asesor" />
+                                <w:tag w:val="asesor" />
+                                <w:id w:val="-1975136320" />
+                                <w:placeholder>
+                                    <w:docPart w:val="DF1C23C25F424739A482BF4B32D825B7" />
+                                </w:placeholder>
+                                <w:showingPlcHdr />
+                                <w:dataBinding
+                                    w:prefixMappings="xmlns:ns0='http://schemas.microsoft.com/office/2006/metadata/properties' xmlns:ns1='http://www.w3.org/2001/XMLSchema-instance' xmlns:ns2='http://schemas.microsoft.com/office/infopath/2007/PartnerControls' xmlns:ns3='6f95e4a7-29d7-4031-82bc-e6f47fff4d41' "
+                                    w:xpath="/ns0:properties[1]/documentManagement[1]/ns3:asesor[1]"
+                                    w:storeItemID="{552029F1-EE44-4CF4-B3BB-5D1EBFAEF13D}" />
+                                <w:text />
+                            </w:sdtPr>
+                            <w:sdtContent>
+                                <w:r w:rsidR="006B723C" w:rsidRPr="00E743B5">
+                                    <w:rPr>
+                                        <w:rStyle w:val="PlaceholderText" />
+                                    </w:rPr>
+                                    <w:t>[asesor]</w:t>
+                                </w:r>
+                            </w:sdtContent>
+                        </w:sdt>
+                    </w:p>
+                </w:tc>
+            </w:tr>
+            <w:tr w:rsidR="001028AA" w:rsidRPr="00E743B5" w14:paraId="1619DE65"
+                w14:textId="77777777" w:rsidTr="00E743B5">
+                <w:trPr>
+                    <w:trHeight w:val="1573" />
+                </w:trPr>
+                <w:tc>
+                    <w:tcPr>
+                        <w:tcW w:w="8792" w:type="dxa" />
+                        <w:gridSpan w:val="2" />
+                    </w:tcPr>
+                    <w:p w14:paraId="064B4E51" w14:textId="2D0FE2CA" w:rsidR="006B723C"
+                        w:rsidRPr="00E743B5" w:rsidRDefault="004725F7" w:rsidP="00E743B5">
+                        <w:pPr>
+                            <w:spacing w:after="160" w:line="259" w:lineRule="auto" />
+                            <w:rPr>
+                                <w:lang w:val="es-EC" />
+                            </w:rPr>
+                        </w:pPr>
+                        <w:r>
+                            <w:rPr>
+                                <w:noProof />
+                                <w:lang w:val="es-EC" />
+                            </w:rPr>
+                            <w:drawing>
+                                <wp:anchor distT="0" distB="0" distL="114300" distR="114300"
+                                    simplePos="0" relativeHeight="251660288" behindDoc="1"
+                                    locked="0" layoutInCell="1" allowOverlap="1"
+                                    wp14:anchorId="557C1FE5" wp14:editId="231603EF">
+                                    <wp:simplePos x="0" y="0" />
+                                    <wp:positionH relativeFrom="column">
+                                        <wp:posOffset>29210</wp:posOffset>
+                                    </wp:positionH>
+                                    <wp:positionV relativeFrom="paragraph">
+                                        <wp:posOffset>97155</wp:posOffset>
+                                    </wp:positionV>
+                                    <wp:extent cx="1828800" cy="1028700" />
+                                    <wp:effectExtent l="0" t="0" r="0" b="0" />
+                                    <wp:wrapTight wrapText="bothSides">
+                                        <wp:wrapPolygon edited="0">
+                                            <wp:start x="0" y="0" />
+                                            <wp:lineTo x="0" y="21200" />
+                                            <wp:lineTo x="21375" y="21200" />
+                                            <wp:lineTo x="21375" y="0" />
+                                            <wp:lineTo x="0" y="0" />
+                                        </wp:wrapPolygon>
+                                    </wp:wrapTight>
+                                    <wp:docPr id="1701709069" name="Picture 1"
+                                        descr="Green to blue gradient" />
+                                    <wp:cNvGraphicFramePr>
+                                        <a:graphicFrameLocks
+                                            xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main"
+                                            noChangeAspect="1" />
+                                    </wp:cNvGraphicFramePr>
+                                    <a:graphic
+                                        xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main">
+                                        <a:graphicData
+                                            uri="http://schemas.openxmlformats.org/drawingml/2006/picture">
+                                            <pic:pic
+                                                xmlns:pic="http://schemas.openxmlformats.org/drawingml/2006/picture">
+                                                <pic:nvPicPr>
+                                                    <pic:cNvPr id="1701709069"
+                                                        name="Picture 1701709069"
+                                                        descr="Green to blue gradient" />
+                                                    <pic:cNvPicPr />
+                                                </pic:nvPicPr>
+                                                <pic:blipFill>
+                                                    <a:blip r:embed="rId9" cstate="print">
+                                                        <a:extLst>
+                                                            <a:ext
+                                                                uri="{28A0092B-C50C-407E-A947-70E740481C1C}">
+                                                                <a14:useLocalDpi
+                                                                    xmlns:a14="http://schemas.microsoft.com/office/drawing/2010/main"
+                                                                    val="0" />
+                                                            </a:ext>
+                                                        </a:extLst>
+                                                    </a:blip>
+                                                    <a:stretch>
+                                                        <a:fillRect />
+                                                    </a:stretch>
+                                                </pic:blipFill>
+                                                <pic:spPr>
+                                                    <a:xfrm>
+                                                        <a:off x="0" y="0" />
+                                                        <a:ext cx="1828800" cy="1028700" />
+                                                    </a:xfrm>
+                                                    <a:prstGeom prst="rect">
+                                                        <a:avLst />
+                                                    </a:prstGeom>
+                                                </pic:spPr>
+                                            </pic:pic>
+                                        </a:graphicData>
+                                    </a:graphic>
+                                </wp:anchor>
+                            </w:drawing>
+                        </w:r>
+                    </w:p>
+                    <w:p w14:paraId="73C2C9C0" w14:textId="77777777" w:rsidR="004725F7"
+                        w:rsidRDefault="004725F7" w:rsidP="00E743B5">
+                        <w:pPr>
+                            <w:spacing w:after="160" w:line="259" w:lineRule="auto" />
+                            <w:rPr>
+                                <w:lang w:val="es-EC" />
+                            </w:rPr>
+                        </w:pPr>
+                    </w:p>
+                    <w:p w14:paraId="55472BF1" w14:textId="77777777" w:rsidR="004725F7"
+                        w:rsidRDefault="004725F7" w:rsidP="00E743B5">
+                        <w:pPr>
+                            <w:spacing w:after="160" w:line="259" w:lineRule="auto" />
+                            <w:rPr>
+                                <w:lang w:val="es-EC" />
+                            </w:rPr>
+                        </w:pPr>
+                    </w:p>
+                    <w:p w14:paraId="570F5667" w14:textId="77777777" w:rsidR="004725F7"
+                        w:rsidRDefault="004725F7" w:rsidP="00E743B5">
+                        <w:pPr>
+                            <w:spacing w:after="160" w:line="259" w:lineRule="auto" />
+                            <w:rPr>
+                                <w:lang w:val="es-EC" />
+                            </w:rPr>
+                        </w:pPr>
+                    </w:p>
+                    <w:p w14:paraId="4A143765" w14:textId="266DA2E8" w:rsidR="001028AA"
+                        w:rsidRPr="00E743B5" w:rsidRDefault="001028AA" w:rsidP="00E743B5">
+                        <w:pPr>
+                            <w:spacing w:after="160" w:line="259" w:lineRule="auto" />
+                            <w:rPr>
+                                <w:lang w:val="es-EC" />
+                            </w:rPr>
+                        </w:pPr>
+                        <w:r w:rsidRPr="00E743B5">
+                            <w:rPr>
+                                <w:lang w:val="es-EC" />
+                            </w:rPr>
+                            <w:t>___________________________</w:t>
+                        </w:r>
+                    </w:p>
+                    <w:p w14:paraId="6B32C76F" w14:textId="206C37E6" w:rsidR="001028AA"
+                        w:rsidRPr="00E743B5" w:rsidRDefault="001028AA" w:rsidP="00E743B5">
+                        <w:pPr>
+                            <w:spacing w:after="160" w:line="259" w:lineRule="auto" />
+                            <w:rPr>
+                                <w:lang w:val="es-EC" />
+                            </w:rPr>
+                        </w:pPr>
+                        <w:r w:rsidRPr="00E743B5">
+                            <w:rPr>
+                                <w:lang w:val="es-EC" />
+                            </w:rPr>
+                            <w:t>Firma</w:t>
+                        </w:r>
+                    </w:p>
+                </w:tc>
+            </w:tr>
+        </w:tbl>
+        <w:p w14:paraId="7F2AF3FC" w14:textId="418475D1" w:rsidR="00AE6747" w:rsidRPr="00E743B5"
+            w:rsidRDefault="00AE6747" w:rsidP="00AE6747">
+            <w:pPr>
+                <w:rPr>
+                    <w:b />
+                    <w:bCs />
+                    <w:lang w:val="es-EC" />
+                </w:rPr>
+            </w:pPr>
+        </w:p>
+        <w:p w14:paraId="509452F8" w14:textId="3619CFAA" w:rsidR="00705A35" w:rsidRPr="00E743B5"
+            w:rsidRDefault="00705A35">
+            <w:pPr>
+                <w:rPr>
+                    <w:b />
+                    <w:bCs />
+                    <w:lang w:val="es-EC" />
+                </w:rPr>
+            </w:pPr>
+        </w:p>
+        <w:p w14:paraId="509452F8" w14:textId="3619CFAA" w:rsidR="00705A35" w:rsidRPr="00E743B5"
+            w:rsidRDefault="00705A35">
+            <w:pPr>
+                <w:rPr>
+                    <w:b />
+                    <w:bCs />
+                    <w:lang w:val="es-EC" />
+                </w:rPr>
+            </w:pPr>
+        </w:p>
+        <w:p w14:paraId="7ED2EA93" w14:textId="1670065E" w:rsidR="001028AA" w:rsidRPr="00E743B5"
+            w:rsidRDefault="001028AA" w:rsidP="001028AA">
+            <w:pPr>
+                <w:jc w:val="center" />
+                <w:rPr>
+                    <w:b />
+                    <w:bCs />
+                    <w:lang w:val="es-EC" />
+                </w:rPr>
+            </w:pPr>
+            <w:r w:rsidRPr="00E743B5">
+                <w:rPr>
+                    <w:b />
+                    <w:bCs />
+                    <w:noProof />
+                    <w:lang w:val="es-EC" />
+                </w:rPr>
+                <w:drawing>
+                    <wp:inline distT="0" distB="0" distL="0" distR="0" wp14:anchorId="62B10556"
+                        wp14:editId="43073493">
+                        <wp:extent cx="4124716" cy="647601" />
+                        <wp:effectExtent l="0" t="0" r="0" b="635" />
+                        <wp:docPr id="319963488" name="Picture 1"
+                            descr="A picture containing font, typography, graphics, logo&#xA;&#xA;Description automatically generated" />
+                        <wp:cNvGraphicFramePr>
+                            <a:graphicFrameLocks
+                                xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main"
+                                noChangeAspect="1" />
+                        </wp:cNvGraphicFramePr>
+                        <a:graphic xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main">
+                            <a:graphicData
+                                uri="http://schemas.openxmlformats.org/drawingml/2006/picture">
+                                <pic:pic
+                                    xmlns:pic="http://schemas.openxmlformats.org/drawingml/2006/picture">
+                                    <pic:nvPicPr>
+                                        <pic:cNvPr id="319963488" name="Picture 1"
+                                            descr="A picture containing font, typography, graphics, logo&#xA;&#xA;Description automatically generated" />
+                                        <pic:cNvPicPr />
+                                    </pic:nvPicPr>
+                                    <pic:blipFill>
+                                        <a:blip r:embed="rId10" />
+                                        <a:stretch>
+                                            <a:fillRect />
+                                        </a:stretch>
+                                    </pic:blipFill>
+                                    <pic:spPr>
+                                        <a:xfrm>
+                                            <a:off x="0" y="0" />
+                                            <a:ext cx="4184655" cy="657012" />
+                                        </a:xfrm>
+                                        <a:prstGeom prst="rect">
+                                            <a:avLst />
+                                        </a:prstGeom>
+                                    </pic:spPr>
+                                </pic:pic>
+                            </a:graphicData>
+                        </a:graphic>
+                    </wp:inline>
+                </w:drawing>
+            </w:r>
+        </w:p>
+        <w:p w14:paraId="24196261" w14:textId="77777777" w:rsidR="00AE6747" w:rsidRPr="00E743B5"
+            w:rsidRDefault="00AE6747" w:rsidP="001028AA">
+            <w:pPr>
+                <w:jc w:val="both" />
+                <w:rPr>
+                    <w:b />
+                    <w:bCs />
+                    <w:lang w:val="es-EC" />
+                </w:rPr>
+            </w:pPr>
+            <w:r w:rsidRPr="00E743B5">
+                <w:rPr>
+                    <w:b />
+                    <w:bCs />
+                    <w:lang w:val="es-EC" />
+                </w:rPr>
+                <w:t>Creado por: [email_generado]</w:t>
+            </w:r>
+        </w:p>
+        <w:sectPr w:rsidR="001028AA" w:rsidRPr="00E743B5">
+            <w:pgSz w:w="12240" w:h="15840" />
+            <w:pgMar w:top="1417" w:right="1701" w:bottom="1417" w:left="1701" w:header="708"
+                w:footer="708" w:gutter="0" />
+            <w:cols w:space="708" />
+            <w:docGrid w:linePitch="360" />
+        </w:sectPr>
+    </w:body>
+</w:document>

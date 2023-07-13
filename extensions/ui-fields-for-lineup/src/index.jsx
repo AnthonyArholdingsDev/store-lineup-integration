@@ -14,6 +14,7 @@ import {
   Spinner,
   useBuyerJourneyIntercept,
   useBuyerJourneyCompleted,
+  useCurrency,
   useApplyMetafieldsChange,
   useMetafield,
   InlineLayout,
@@ -24,17 +25,18 @@ render("Checkout::Dynamic::Render", () => <App />);
 function App() {
   //Main variables
   const API_URL =
-    "https://cors-anywhere.herokuapp.com/https://ce8c-2800-bf0-8014-9d-1562-8c7a-13b7-809b.ngrok-free.app";
+    "https://cors-anywhere.herokuapp.com/https://3ff0-2800-bf0-8014-9d-b5d4-7471-a55b-2b1a.ngrok-free.app";
 
-  const MAIN_TOKEN =
-    "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJjcmVkZW50aWFsX2lkIjoiYThlNThhMzAtODRlZi00YjMyLWFkN2MtYzcwYWZjMDkyMzBkIiwiZXhwIjoxNjg3Mjc4ODM0LCJvcmlnX2lhdCI6MTY4NjY3NDAzNCwiaXNzIjoibG9jYWxob3N0LmNvbSJ9.PvcMMzzwihcP9Nny-3xM8uv-VUm5vmP7xHrI8HOkids";
+  const MAIN_TOKEN = "";
   const API_KEY = "9b2c299397f0cb50d8512e6067e18e1adb33a733";
   const API_SECRET = "^4-p8ijc^2sg9nh41&e$-oorj@66z@qs7f_qeofat=fkmn$hb3";
   // Define the metafield namespace and key
   const metafieldNamespace = "loyalty";
   const lineUpCardNumberKey = "lineUpCardNumber";
-  //100799072
-  //081794
+
+  // Define currency
+  const currency = useCurrency();
+  const symbol = getCurrencySymbol("en-US", currency.isoCode);
 
   // Interval
   var timerInterval = null;
@@ -270,7 +272,7 @@ function App() {
         await applyAttributeChange({
           key: "lineupCardValue",
           type: "updateAttribute",
-          value: saldo,
+          value: (saldo / parseFloat(data.extra.cambio)).toFixed(2),
         });
 
         await applyAttributeChange({
@@ -416,6 +418,7 @@ function App() {
     //Body
     var raw = JSON.stringify({
       token: tokenText,
+      currency: currency.isoCode,
     });
 
     //options
@@ -558,6 +561,35 @@ function App() {
     }
   }
 
+  function getCurrencySymbol(locale, currencyCode) {
+    const format = new Intl.NumberFormat(locale, {
+      style: "currency",
+      currency: currencyCode,
+      minimumFractionDigits: 0,
+      maximumFractionDigits: 0,
+    });
+
+    const parts = format.formatToParts(123);
+    let zeroDecimalCurrency = false;
+    for (let part of parts) {
+      if (part.type === "integer") {
+        zeroDecimalCurrency = true;
+      } else if (zeroDecimalCurrency && part.type === "decimal") {
+        zeroDecimalCurrency = false;
+        break;
+      }
+    }
+
+    if (zeroDecimalCurrency) {
+      parts.pop();
+      parts.pop();
+    }
+
+    return parts
+      .filter((part) => part.type === "currency")
+      .map((part) => part.value)[0];
+  }
+
   // Return the JSX to render
   return (
     <BlockStack>
@@ -638,9 +670,12 @@ function App() {
                 <Text>
                   Número de tarjeta: {lineUpCardNumberMetafield?.value}
                 </Text>
-                <Text>Saldo disponible en la tarjeta: ${saldoDisponible}</Text>
+                <Text>
+                  Saldo disponible en la tarjeta: {symbol} {saldoDisponible}
+                </Text>
                 <Text appearance="info">
-                  Valor de la tarjeta a utilizar en la compra: $ {saldoGastar}
+                  Valor de la tarjeta a utilizar en la compra: {symbol}{" "}
+                  {saldoGastar}
                 </Text>
 
                 {!isCardValueUpdated && (

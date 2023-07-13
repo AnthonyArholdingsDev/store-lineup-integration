@@ -58,7 +58,11 @@
   "merchant_of_record_app_id": null,
   "name": "#2177",
   "note": null,
-  "note_attributes": [],
+  "note_attributes": [
+    { "name": "lineupCardValue", "value": "885.95" },
+    { "name": "lineupCardNumber", "value": "100799072" },
+    { "name": "lineupCardEmail", "value": "anthony.villegas@ar-holdings.com" }
+  ],
   "number": 1177,
   "order_number": 2177,
   "order_status_url": "https:\\/\\/lineuprewards-tt.myshopify.com\\/28027879513\\/orders\\/496d005e444f231ae4082624f6f8aa7c\\/authenticate?key=3b9961b87059c92e2903b3441d186306",
